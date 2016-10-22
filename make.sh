@@ -17,8 +17,14 @@ cd $dir
 
 # Move any existing dotfiles in homedir to dotfiles_old directory, then create the symlinks
 for file in $files; do
-  echo "Moving ${file} from ~ to $olddir"
-  mv ~/$file ~/dotfiles_old/
+
+  if [ -f ${file} ]
+  then
+    echo "File exists"
+    echo "Moving ${file} from ~ to $olddir"
+    mv ~/$file ~/dotfiles_old/
+  fi
+
   echo "Creating symlink to $file in home directory"
   ln -s $dir/$file ~/$file
 done
