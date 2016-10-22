@@ -1,0 +1,3 @@
+# Add bash scriptings here and it will be executable by its filename
+# Make sure it's executable by doing: chmod +x filename
+echo "ayyy"

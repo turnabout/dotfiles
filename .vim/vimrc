@@ -1,0 +1,120 @@
+set nocompatible
+
+
+
+" Color scheme
+" ------------------------------------------------------------------
+syntax enable
+colorscheme molokai
+let g:molokai_original = 1
+" :set t_Co=256
+
+
+
+" Key mappings - Normal mode
+"------------------------------------------------------------------
+
+" jk/kj to leave insert mode
+:inoremap jk <esc>
+:inoremap kj <esc>
+:xnoremap i <esc>
+
+" Remove <esc> to leave insert mode
+:inoremap <esc> <nop>
+
+" <space> as <leader>
+:nmap <space> \
+
+
+" Key mappings - Insert mode
+" ------------------------------------------------------------------
+
+" Delete line and reenter insert mode
+:imap <c-d> jkddi
+
+
+" Other key mappings - Insert mode
+" ---------------------------------
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+
+" Settings
+" ------------------------------------------------------------------
+set history=50		" Keep 50 lines of command line history
+set ruler		" Show the cursor position all the time
+set showcmd		" Display incomplete commands
+set incsearch		" Do incremental searching
+set ruler		" Rulers
+set number		" Line numbers
+set scrolloff=3		" Keep cursor visible within 3 lines
+
+" Allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" h and l wrap around lines
+set whichwrap=h,l
+
+" Status line
+set statusline=%l " Path to the file
+set statusline+=\ -\ "Separator
+set statusline+=FileType: "Label
+set statusline+=%y "Filetype of the file
+
+" Auto use the system clipboard
+set clipboard=unnamedplus
+
+
+
+
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+if has('langmap') && exists('+langnoremap')
+  " Prevent that the langmap option applies to characters that result from a
+  " mapping.  If unset (default), this may break plugins (but it's backward
+  " compatible).
+  set langnoremap
+endif

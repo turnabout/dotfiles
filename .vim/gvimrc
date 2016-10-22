@@ -1,0 +1,10 @@
+" Stop cursor from blinking
+set guicursor=a:blinkon0
+
+" Remove toolbars
+set guioptions-=m
+set guioptions-=T
+set guioptions-=L
+
+" Maximize gvim window
+  set lines=999 columns=999
