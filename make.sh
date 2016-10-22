@@ -10,7 +10,7 @@ olddir=~/dotfiles_old       # Old dotfiles backup directory
 files=".bashrc .vim .profile bin"
 
 # Move dotfiles to .dotfiles hidden folder
-mv ~/dotfiles $dir
+mv ~/.dotfiles $dir
 
 mkdir -p $olddir
 cd $dir
