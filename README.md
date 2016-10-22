@@ -14,17 +14,23 @@ My dotfiles/configuration files kept in a tidy repo to sync across devices. Incl
 
 Clone the repo in ~ directory 
 
-```git clone https://github.com/turnabout/dotfiles```
+```
+git clone https://github.com/turnabout/dotfiles
+```
 
 
 Rename the cloned directory `dotfiles` into `.dotfiles`
 
-```mv dotfiles .dotfiles```
+```
+mv dotfiles .dotfiles
+```
 
 
 Run make.sh to correctly set up symlinks for all files
 
-```.dotfiles/make.sh```
+```
+.dotfiles/make.sh
+```
 
 
 
