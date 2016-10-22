@@ -297,13 +297,18 @@ function reloadb() {
   source ~/.bashrc
 }
 
+# Check if a command exists
+function command_exists () {
+  type "$1" &> /dev/null ;
+}
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
-
 # Start tmux automatically
-tmux attach &> /dev/null
+if command_exists tmux ; then
+  tmux attach &> /dev/null
 
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
+  if [[ ! $TERM =~ screen ]]; then
+      exec tmux
+  fi
 fi
