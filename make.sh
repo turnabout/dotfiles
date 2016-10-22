@@ -7,7 +7,7 @@
 # Variables
 dir=~/.dotfiles             # Dotfiles directory
 olddir=~/dotfiles_old       # Old dotfiles backup directory
-files=".bashrc .vim .profile bin"
+files=".bashrc .gitconfig .profile .tmux.conf .vim bin"
 
 # Move dotfiles to .dotfiles hidden folder
 # mv ~/.dotfiles $dir
