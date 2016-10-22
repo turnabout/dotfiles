@@ -10,13 +10,13 @@ olddir=~/dotfiles_old       # Old dotfiles backup directory
 files=".bashrc .vim .profile bin"
 
 # Move dotfiles to .dotfiles hidden folder
-mv ~/.dotfiles $dir
+# mv ~/.dotfiles $dir
 
 mkdir -p $olddir
 cd $dir
 
 # Move any existing dotfiles in homedir to dotfiles_old directory, then create the symlinks
-for file in $file; do
+for file in $files; do
   echo "Moving any existing dotfiles from ~ to $olddir"
   mv ~/$file ~/dotfiles_old/
   echo "Creating symlink to $file in home directory"
