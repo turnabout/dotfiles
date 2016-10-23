@@ -33,5 +33,18 @@ Run make.sh to correctly set up symlinks for all files
 ```
 
 
+Optionally run config files as needed
+
+```
+# Install necessary packages
+.dotfiles/config/initconfig.sh
+
+# Install Sublime Text 3
+.dotfiles/config/sublime.sh
+
+# Import prefered compiz preferences
+.dotfiles/config/compiz.sh
+```
+
 
 Also includes a `bin` folder containing executable bash commands, for more funtimes.
