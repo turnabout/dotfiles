@@ -8,7 +8,7 @@
 dir=~/.dotfiles
 
 # Install all packages written in 'packages.list'
-cat packages.list | xargs sudo apt-get -y install
+cat ${dir}/config/packages.list | xargs sudo apt-get -y install
 
 # Install gnome terminal color scheme (from https://github.com/Mayccoll/Gogh/blob/master/content/themes.md#monokai-dark)
 wget -O xt http://git.io/v3DBO && chmod +x xt && ./xt && rm xt
