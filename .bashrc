@@ -211,8 +211,11 @@ export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_br
 # Productivity functions
 # 
 
+# Variables
 projdir="/home/${USER}/Documents/projects"
 curprojdir=""
+dotfilesdir="/home/${USER}/.dotfiles"
+subluserdir="/home/${USER}/.config/sublime-text-3/Packages/User"
 
 # Change to current project
 function curpr() {
@@ -301,6 +304,23 @@ function reloadb() {
 function command_exists () {
   type "$1" &> /dev/null ;
 }
+
+# Sync dotfiles with repo
+function syncdot() {
+  cwd=$(pwd)
+  cd ${dotfilesdir}
+  git pull origin master
+  cd ${cwd}
+}
+
+# Sync Sublime Text 3 Preferences
+function syncsubl() {
+  cwd=$(pwd)
+  cd ${subluserdir}
+  git pull origin master
+  cd ${cwd}
+}
+
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
