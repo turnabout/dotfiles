@@ -42,8 +42,7 @@ Optionally run config files as needed
 # Install Sublime Text 3
 .dotfiles/config/sublime.sh
 
-# Import prefered compiz preferences
-.dotfiles/config/compiz.sh
+# With compiz config, import compiz-unity.profile
 ```
 
 
