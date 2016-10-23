@@ -18,9 +18,3 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
-
-
-# Additional Workspaces
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
