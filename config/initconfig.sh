@@ -8,7 +8,6 @@
 dir=~/.dotfiles
 
 # Install all packages written in 'packages.list'
-sudo apt-get update
 cat packages.list | xargs sudo apt-get -y install
 
 # Install gnome terminal color scheme (from https://github.com/Mayccoll/Gogh/blob/master/content/themes.md#monokai-dark)
