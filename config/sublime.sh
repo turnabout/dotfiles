@@ -15,13 +15,14 @@ sudo apt-get install sublime-text-installer
 # Open it once to generate config files
 subl
 
-# Enable package control
-wget https://packagecontrol.io/Package%20Control.sublime-package -P "${st3installedpackagesfolder}"
-
 # Clone config files git repo
 cd "${st3packagesfolder}"
 rm -r -f User
 
 git clone https://github.com/turnabout/sublime.git User
+
+# Enable package control
+wget https://packagecontrol.io/Package%20Control.sublime-package -P "${st3installedpackagesfolder}"
+
 
 cd ~
