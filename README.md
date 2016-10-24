@@ -42,18 +42,16 @@ In the `config` folder are some scripts/config files for installing my prefered 
 
 ### initconfig.sh
 
-*Installs packages that are written down in `packages.list`
-*Installs terminal color scheme
-*Adds other preferred configurations
+* Installs packages that are written down in `packages.list`
+* Installs terminal color scheme
+* Adds other preferred configurations
 
 
 
 ### sublime.sh
 
 Installs Sublime Text 3.
-```
-.dotfiles/config/sublime.sh
-```
+
 Once finished, open Sublime and CTRL+Shift+P > Install Package Control
 
 
