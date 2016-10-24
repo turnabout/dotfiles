@@ -45,6 +45,7 @@ In the `config` folder are some scripts/config files for installing my prefered 
 * Installs packages that are written down in `packages.list`
 * Installs terminal color scheme
 * Adds other preferred configurations
+* Launchs `sublime.sh`
 
 
 
