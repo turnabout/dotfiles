@@ -60,3 +60,9 @@ Once finished, open Sublime and CTRL+Shift+P > Install Package Control
 ### compiz-unity.profile
 
 Profile for prefered compiz-config configurations. Can be imported from compiz-config.
+
+
+
+## Other
+* `bin` folder contains custom bash functions. The folder is symlinked with `make.sh`.
+* `config/keybindings.md` contains key bindings to be set in Ubuntu "keyboard" app.
