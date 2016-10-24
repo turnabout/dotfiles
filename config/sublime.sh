@@ -13,10 +13,15 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer
 
 # Open it once to generate config files
-subl
+# subl
+
+# Manually create config directories
+cd "/home/${USER}/.config"
+
+mkdir -p sublime-text-3/Packages/User
+cd sublime-text-3/Packages
 
 # Clone config files git repo
-cd "${st3packagesfolder}"
 rm -r -f User
 
 git clone https://github.com/turnabout/sublime.git User
