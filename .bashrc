@@ -321,6 +321,16 @@ function syncsubl() {
   cd ${cwd}
 }
 
+# Cd to sublime user settings
+function sublsettings() {
+  cd ${subluserdir}
+}
+
+# Cd to dotfiles
+function dotfiles() {
+  cd ${dotfilesdir}
+}
+
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
