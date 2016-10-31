@@ -24,6 +24,6 @@ cd sublime-text-3/Packages
 # Clone config files git repo
 rm -r -f User
 
-git clone https://github.com/turnabout/sublime.git User
+git clone https://github.com/turnabout/sublime-settings.git User
 
 cd ~
