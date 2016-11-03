@@ -341,7 +341,7 @@ function dotfiles() {
 # ** Only do this when checking out new feature/fix branch you're working on **
 function dmer() {
   git remote update
-  git merge develop
+  git merge origin/develop
 }
 
 # Cd to PhpStorm settings directory
