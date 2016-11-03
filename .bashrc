@@ -344,6 +344,11 @@ function dmer() {
   git merge develop
 }
 
+# Cd to PhpStorm settings directory
+function phpset() {
+  cd "/home/${USER}/.PhpStorm2016.2/config"
+}
+
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
