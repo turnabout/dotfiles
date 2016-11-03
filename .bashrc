@@ -332,6 +332,19 @@ function dotfiles() {
 }
 
 
+
+# 
+# Momentum Functions
+# 
+
+# Pull in remote branch changes and merge develop branch into current one
+# ** Only do this when checking out new feature/fix branch you're working on **
+function dmer() {
+  git remote update
+  git merge develop
+}
+
+
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Start tmux automatically
