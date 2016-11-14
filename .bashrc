@@ -349,6 +349,11 @@ function phpset() {
   cd "/home/${USER}/.PhpStorm2016.2/config"
 }
 
+# Ssh to production server
+function prod() {
+  ssh web1@ded3003.ded.reflected.net
+}
+
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
