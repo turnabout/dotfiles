@@ -354,6 +354,11 @@ function prod() {
   ssh web1@ded3003.ded.reflected.net
 }
 
+# Print template for deploying
+function dtmpl() {
+  echo ">*DEPLOYING* \`https://github.com/mventures/legacy-code/${1}/\` ${2}" | xclip -sel clip
+}
+
 
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
