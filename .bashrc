@@ -151,6 +151,7 @@ alias python=python3.5
 alias fucking=sudo
 alias cls="clear"
 alias cd..="cd .."
+alias fuck='sudo $(history -p \!\!)'
 
 
 # 
