@@ -149,11 +149,12 @@ digbare() {
 # Aliases
 alias python=python3.5
 alias fucking=sudo
-alias cls="clear"
-alias cd..="cd .."
+alias cls='clear'
+alias cd..='cd ..'
 alias fuck='sudo $(history -p \!\!)'
 alias gc='git checkout'
 alias gcn='git checkout -b '
+alias ga='git addcom'
 
 
 # 
