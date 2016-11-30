@@ -152,6 +152,8 @@ alias fucking=sudo
 alias cls="clear"
 alias cd..="cd .."
 alias fuck='sudo $(history -p \!\!)'
+alias gc='git checkout'
+alias gcn='git checkout -b '
 
 
 # 
@@ -289,6 +291,12 @@ function gitpat() {
   git commit
 }
 # url: http://stackoverflow.com/questions/13170263/whats-the-easiest-way-to-merge-all-but-one-change-from-a-branch-in-git]
+
+# Push changes to current branch
+function gpuc() {
+  branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
+  git push origin "${branch_name}"
+}
 
 
 
