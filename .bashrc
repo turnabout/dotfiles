@@ -155,6 +155,7 @@ alias fuck='sudo $(history -p \!\!)'
 alias gc='git checkout'
 alias gcn='git checkout -b '
 alias ga='git addcom'
+alias gpr='git pull --rebase'
 
 
 # 
