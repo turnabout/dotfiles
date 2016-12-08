@@ -300,6 +300,10 @@ function gp() {
   git push origin "${branch_name}"
 }
 
+function gitkillold() {
+  git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d
+}
+
 
 
 # 
