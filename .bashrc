@@ -156,6 +156,7 @@ alias gc='git checkout'
 alias gcn='git checkout -b '
 alias ga='git addcom'
 alias gpr='git pull --rebase'
+alias fuckshitup='git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d'
 
 
 # 
@@ -298,10 +299,6 @@ function gitpat() {
 function gp() {
   branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
   git push origin "${branch_name}"
-}
-
-function gitkillold() {
-  git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d
 }
 
 
