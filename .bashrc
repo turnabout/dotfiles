@@ -366,6 +366,16 @@ function prod() {
   ssh web1@ded3003.ded.reflected.net
 }
 
+# Refresh ssh-add
+function refressh() {
+  ssh-add ~/.ssh/id_rsa
+}
+
+# SSH to production server (for home)
+function prodh() {
+  ssh mv-deploy
+}
+
 # Print template for deploying
 function dtmpl() {
   echo ">*DEPLOYING* \`https://github.com/mventures/legacy-code/${1}/\` ${2}" | xclip -sel clip
