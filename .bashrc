@@ -145,7 +145,6 @@ digbare() {
 }
 
 
-
 # Aliases
 alias python=python3.5
 alias fucking=sudo
@@ -299,6 +298,13 @@ function gitpat() {
 function gp() {
   branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
   git push origin "${branch_name}"
+}
+
+# `ga` and then `gp`, followed by screen clear
+function gap() {
+  ga
+  gp
+  clear
 }
 
 
