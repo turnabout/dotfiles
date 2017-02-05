@@ -354,6 +354,15 @@ function gd() {
   git diff
 }
 
+# git log shortcut
+function gl() {
+  if [ ${1} ]; then 
+    git log -${1}
+  else
+    git log
+  fi
+}
+
 
 
 # 
