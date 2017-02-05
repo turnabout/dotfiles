@@ -349,6 +349,11 @@ function dotfiles() {
   cd ${dotfilesdir}
 }
 
+# git diff shortcut
+function gd() {
+  git diff
+}
+
 
 
 # 
