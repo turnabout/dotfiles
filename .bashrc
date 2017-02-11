@@ -401,8 +401,11 @@ function dtmpl() {
   echo ">*DEPLOYING* \`https://github.com/mventures/legacy-code/${1}/\` ${2}" | xclip -sel clip
 }
 
-
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
+
+# Host name & port
+export HOSTNAME="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
+export PORT="8080"
 
 # Start tmux automatically
 if command_exists tmux ; then
