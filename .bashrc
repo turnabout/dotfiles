@@ -396,11 +396,6 @@ function prodh() {
   ssh mv-deploy
 }
 
-# Print template for deploying
-function dtmpl() {
-  echo ">*DEPLOYING* \`https://github.com/mventures/legacy-code/${1}/\` ${2}" | xclip -sel clip
-}
-
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Host name & port
