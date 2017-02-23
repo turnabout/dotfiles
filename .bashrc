@@ -307,6 +307,11 @@ function gap() {
   clear
 }
 
+# "git remote update" shortcut
+function gru() {
+  git remote update
+}
+
 
 
 # 
