@@ -118,3 +118,6 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
+
+let &colorcolumn=join(range(51,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27

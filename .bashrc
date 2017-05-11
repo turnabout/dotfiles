@@ -415,3 +415,5 @@ if command_exists tmux ; then
       exec tmux
   fi
 fi
+export NVM_DIR="/home/k_pageau/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
