@@ -72,6 +72,14 @@ set clipboard=unnamedplus
 :set tabstop=8
 
 
+" Color column
+" 50 (Git commit)
+" 80 (Code)
+" ------------------------------------------------------------------
+let &colorcolumn=join(range(51,80),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
@@ -122,5 +130,4 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-let &colorcolumn=join(range(51,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
