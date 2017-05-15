@@ -66,7 +66,10 @@ set statusline+=%y "Filetype of the file
 set clipboard=unnamedplus
 
 
-
+" Tabs to spaces
+" ------------------------------------------------------------------
+:set expandtab
+:set tabstop=8
 
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
