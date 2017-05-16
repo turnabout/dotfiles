@@ -276,6 +276,16 @@ function sublb() {
   subl "/home/${USER}/.bashrc"
 }
 
+# Open vimrc in vim
+function vrc() {
+  vim ~/.dotfiles/.vim/vimrc
+}
+
+# Open bashrc in vim
+function brc() {
+  vim ~/.dotfiles/.bashrc 
+}
+
 # Merge a single file over to another branch
 # $1 - The branch to patch to
 # $2 - The file to use to patch
