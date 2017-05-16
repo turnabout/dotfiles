@@ -369,6 +369,11 @@ function gl() {
   fi
 }
 
+# git reset --hard shortcut
+function grh() {
+  git reset --hard
+}
+
 
 
 # 
