@@ -1,0 +1,7 @@
+" jk/kj to leave insert mode
+:inoremap jk <esc>
+:inoremap kj <esc>
+:xnoremap i <esc>
+
+" Auto use the system clipboard
+set clipboard=unnamedplus
