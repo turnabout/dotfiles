@@ -84,7 +84,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " C
 " ------------------------------------------------------------------
 :command Gcc !gcc %
-map <F2> :Gcc
+map <leader>c :Gcc
 
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
