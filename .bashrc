@@ -324,6 +324,10 @@ function gru() {
   git remote update
 }
 
+function gm() {
+  git commit
+}
+
 
 
 # 
