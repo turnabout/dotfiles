@@ -1,5 +1,6 @@
 set nocompatible
 
+execute pathogen#infect()
 
 
 " Color scheme
