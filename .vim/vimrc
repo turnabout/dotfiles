@@ -4,7 +4,7 @@ execute pathogen#infect()
 
 
 " Color scheme
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 syntax enable
 colorscheme molokai
 let g:molokai_original = 1
@@ -13,7 +13,7 @@ let g:molokai_original = 1
 
 
 " Key mappings - Normal mode
-"------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " jk/kj to leave insert mode
 :inoremap jk <esc>
@@ -28,21 +28,25 @@ let g:molokai_original = 1
 
 
 " Key mappings - Insert mode
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " Delete line and reenter insert mode
 :imap <c-d> jkddi
 
+" Macros
+" ------------------------------------------------------------------------------
 
 " Other key mappings - Insert mode
-" ---------------------------------
+" ------------------------------------------------------------------------------
+
+" EOL Semicolon
+noremap <C-m> A;<Esc>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-
 " Settings
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 set history=50		" Keep 50 lines of command line history
 set ruler		" Show the cursor position all the time
 set showcmd		" Display incomplete commands
@@ -68,7 +72,7 @@ set clipboard=unnamedplus
 
 
 " Tabs to spaces
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 :set expandtab
 :set tabstop=8
 
@@ -76,13 +80,13 @@ set clipboard=unnamedplus
 " Color column
 " 50 (Git commit)
 " 80 (Code)
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 let &colorcolumn=join(range(51,80),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " C
-" ------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 :command Gcc !gcc %
 map <leader>c :Gcc
 
