@@ -1,0 +1,11 @@
+Moving vertically in a file
+
+• <Ctrl-e> Scroll downwards
+• <Ctrl-y> Scroll upwards
+• { and }  Paragraphs backward/forward
+• zz       Center screen in middle of cursor
+• zt       Center screen with cursor at top
+• zb       Center screen with cursor at bottom
+• M        Place cursor at middle of screen
+• H        Place cursor at top of screen
+• L        Place cursor at bottom of screen
