@@ -5,6 +5,7 @@ execute pathogen#infect()
 " Unsorted
 " ------------------------------------------------------------------------------
 set updatetime=250
+let g:notes_directories = ['~/.dotfiles/.vim/notes']
 
 
 " Color scheme
