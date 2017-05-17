@@ -1,8 +1,33 @@
 My plugins
 
-List of all used plugins & their install commands.
+List of all used plugins.
 
-git clone https://github.com/jiangmiao/auto-pairs.git
-git clone https://github.com/airblade/vim-gitgutter.git
-git clone https://github.com/xolox/vim-misc.git
-git clone https://github.com/xolox/vim-notes.git
+
+——————————————————————————————————————————————————
+# Auto pairs
+Automatically adds closing brackets, parens, 
+and quotes when typing the opening part.
+
+https://github.com/jiangmiao/auto-pairs
+
+
+# Vim GitGutter
+Shows a git diff in gutter and 
+previews/stages/undoes hunks.
+
+https://github.com/airblade/vim-gitgutter
+
+
+# Vim Notes
+Notes-taking inside of Vim
+
+https://github.com/xolox/vim-notes
+
+
+# Vim Misc
+Plugin dependency for Vim Notes
+
+https://github.com/xolox/vim-misc
+——————————————————————————————————————————————————
+
+
