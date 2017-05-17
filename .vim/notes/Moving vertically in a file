@@ -1,4 +1,5 @@
 Moving vertically in a file
+@vim
 
 • <Ctrl-e> Scroll downwards
 • <Ctrl-y> Scroll upwards

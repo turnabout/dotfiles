@@ -1,9 +1,8 @@
 My plugins
+@vim
 
 List of all used plugins.
 
-
-——————————————————————————————————————————————————
 # Auto pairs
 Automatically adds closing brackets, parens, 
 and quotes when typing the opening part.
@@ -28,6 +27,3 @@ https://github.com/xolox/vim-notes
 Plugin dependency for Vim Notes
 
 https://github.com/xolox/vim-misc
-——————————————————————————————————————————————————
-
-
