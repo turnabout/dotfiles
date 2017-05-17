@@ -1,3 +1,13 @@
+" Key mappings - Normal mode
+" ------------------------------------------------------------------------------
+
+" EOL Semicolon
+noremap <C-m> A;<Esc>
+
+
+" Key mappings - Insert mode
+" ------------------------------------------------------------------------------
+
 " jk/kj to leave insert mode
 :inoremap jk <esc>
 :inoremap kj <esc>
