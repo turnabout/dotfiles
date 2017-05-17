@@ -81,6 +81,8 @@ set clipboard=unnamedplus
 :set expandtab
 :set tabstop=8
 :set softtabstop=8
+map <leader>n :Note 
+map <leader>sn :SearchNotes 
 
 
 " Color column
