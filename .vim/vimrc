@@ -10,10 +10,10 @@ let g:notes_directories = ['~/.dotfiles/.vim/notes']
 
 " Color scheme
 " ------------------------------------------------------------------------------
-syntax enable
-colorscheme molokai
-let g:molokai_original = 1
-" :set t_Co=256
+set t_Co=256 
+syntax on
+colorscheme jellybeans
+" let g:molokai_original = 1
 
 
 
@@ -146,5 +146,3 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-
-
