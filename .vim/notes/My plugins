@@ -32,3 +32,8 @@ https://github.com/xolox/vim-misc
 Plugin for easily toggling lines of comments
 
 https://github.com/scrooloose/nerdcommenter
+
+# Quick-Scope
+Highlights which characters to target for f, etc.
+
+https://github.com/unblevable/quick-scope
