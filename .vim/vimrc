@@ -2,11 +2,17 @@ set nocompatible
 
 execute pathogen#infect()
 
+
 " Unsorted
 " ------------------------------------------------------------------------------
 set updatetime=250
 let g:notes_directories = ['~/.dotfiles/.vim/notes']
 
+" <Ctrl>+/ - map to toggle comments
+map <C-_> <leader>ci
+
+map <leader>n :Note 
+map <leader>sn :SearchNotes 
 
 " Color scheme
 " ------------------------------------------------------------------------------
@@ -16,30 +22,24 @@ colorscheme jellybeans
 " let g:molokai_original = 1
 
 
-
-" Key mappings - Normal mode
+" Key mappings
 " ------------------------------------------------------------------------------
+" <space> as <leader>
+:map <space> \
 
 " jk/kj to leave insert mode
 :inoremap jk <esc>
 :inoremap kj <esc>
-:xnoremap i <esc>
 
 " Remove <esc> to leave insert mode
 :inoremap <esc> <nop>
-
-" <space> as <leader>
-:nmap <space> \
-
-
-" Key mappings - Insert mode
-" ------------------------------------------------------------------------------
 
 " Delete line and reenter insert mode
 :imap <c-d> jkddi
 
 " Macros
 " ------------------------------------------------------------------------------
+
 
 " Other key mappings - Insert mode
 " ------------------------------------------------------------------------------
@@ -81,8 +81,6 @@ set clipboard=unnamedplus
 :set expandtab
 :set tabstop=8
 :set softtabstop=8
-map <leader>n :Note 
-map <leader>sn :SearchNotes 
 
 
 " Color column
@@ -96,7 +94,12 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " C
 " ------------------------------------------------------------------------------
 :command Gcc !gcc %
-map <leader>c :Gcc
+map <leader>gc :Gcc
+
+
+
+
+
 
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
