@@ -11,6 +11,9 @@ let g:notes_directories = ['~/.dotfiles/.vim/notes']
 
 " <Ctrl>+/ - map to toggle comments
 map <C-_> <leader>ci
+imap <C-_> /**/jkhi<space><space>jki
+" TODO bind ctrl shift / to multiline comment
+"imap <C-S-_> iaaaa
 
 map <leader>n :Note 
 map <leader>sn :SearchNotes 
