@@ -15,6 +15,14 @@ map <C-_> <leader>ci
 map <leader>n :Note 
 map <leader>sn :SearchNotes 
 
+" Move current line up or down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+
 " Color scheme
 " ------------------------------------------------------------------------------
 set t_Co=256 
