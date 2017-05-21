@@ -112,7 +112,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " C
 " ------------------------------------------------------------------------------
-:command Gcc !gcc %
+:command Gcc !gcc -g %
 map <leader>gc :Gcc
 
 

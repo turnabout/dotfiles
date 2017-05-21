@@ -213,6 +213,14 @@ parse_git_branch_color() {
 export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "
 
 
+# 
+# General helper functions
+# 
+
+# Get file last modified date
+function lastmod() {
+        stat -c %y "${1}"
+}
 
 # 
 # Productivity functions
@@ -227,36 +235,6 @@ subluserdir="/home/${USER}/.config/sublime-text-3/Packages/User"
 # Change to current project
 function curpr() {
   cd "${projdir}/${curprojdir}"
-}
-
-# Start a new project
-function newpr() {
-
-  if [ -z ${1} ]; then 
-      printf "To start a new project in the '${projdir}/projname', \nadd a parameter representing the project name.\n"
-      return
-  fi
-
-  cd "${projdir}"
-  git clone https://bitbucket.org/turnabout/turnabout-boilerplate "${1}"
-  cd "${1}"
-  git checkout --track remotes/origin/elems-showcase
-  git checkout master
-  npm install
-  subl .
-  gnome-terminal --working-directory="${projdir}/${1}"
-  gulp
-}
-
-# Open a project directory
-function openpr() {
-  if [ -z ${1} ]; then 
-      echo "Project name not set."
-      return
-  fi
-
-  cd "${projdir}/${1}"
-  subl .
 }
 
 # Push git changes
