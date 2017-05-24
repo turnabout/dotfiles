@@ -86,10 +86,11 @@ set backspace=indent,eol,start
 set whichwrap=h,l
 
 " Status line
-set statusline=%l " Path to the file
-set statusline+=\ -\ "Separator
-set statusline+=FileType: "Label
-set statusline+=%y "Filetype of the file
+set statusline=%l         " Path to the file
+set statusline+=\ -\      " Separator
+set statusline+=FileType: " Label
+set statusline+=%y\       " Filetype of the file
+set statusline+=%c        " Column number
 
 " Auto use the system clipboard
 set clipboard=unnamedplus
