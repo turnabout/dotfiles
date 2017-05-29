@@ -2,7 +2,7 @@
 	email = kevin.pageau@momentumtravel.com
 	name = Kevin Pageau
 [core]
-	editor = vim
+	editor = nvim
 [credential]
 	helper = cache --timeout=86400
 [alias]
