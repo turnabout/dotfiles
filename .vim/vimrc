@@ -16,7 +16,7 @@ map <C-_> <leader>ci
 imap <C-_> /**/jkhi<space><space>jki
 
 " <Ctrl>+n - Add a multi line C comment
-imap <C-n> /**<Enter><Enter><Backspace>/jkkA<space>
+imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
 
 map <leader>n :Note 
 map <leader>sn :SearchNotes 

@@ -1,0 +1,62 @@
+JustFly new filters
+
+Specs on new JustFly left-hand side filters work. “Inspired” by Cheap-O.
+
+
+## Left Filters
+• “Mixed Airlines” option currently doesn’t actually work as intended.
+  When an airline is checked by itself, results will show that airline 
+  along with other airlines, so not true exclusivity. It should be.
+  
+  On top of that, the “Multiple Airlines” option should be checked when 
+  showing one airline along with others, contrarily to how it is right now.
+
+• When refining search with left filters, add them over the search results 
+  to make it easy to see which filters are selected, and add an option 
+  to remove them (Like Cheap-O).
+
+  Additionally, we might want to display the "Show all" option over filters 
+  only when filters are actually applied, and not at all times.
+
+• Place alliances filter in their own tab underneath the “Airlines” filter.
+
+• Add “NEW icon next to stops filter (Like Cheap-O).
+
+• Add layovers to airports box
+
+• Add Connection Time filter section (Like Cheap-O).
+
+
+## Tabs
+• Tabs, left filters & matrix should all work together
+
+• Make tabs larger - not obvious enough when they're selected
+
+• Change Direct tab to "Shortest/Direct". It should show all flights ordered 
+  by flight duration ascending.
+
+
+## Interaction Matrix & Left filters:
+• Clear matrix selection when: 
+  • Selecting left filters for STOPS or AIRLINES
+  • Selecting top tabs
+
+• Clear selected left filters when:
+  • Matrix is selected (clear any selected STOP or AIRLINE filter)
+
+
+## Other
+• Show number of results (x found)
+
+
+## Notes/Questions
+• Find a way to refresh filters without re-rendering them entirely.
+
+• About that, if we don't re-render the whole markup entirely, we might want 
+  to make the filter experience less user-blocking 
+  (no full page overlay while the filter is loading)
+
+• When you close the matrix, it's gone for good. Different way?
+
+• In search results, add descriptive text to depart & return times. E.g.
+  "Leaving New York" instead of "New York"
