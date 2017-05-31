@@ -77,7 +77,7 @@ set showcmd		" Display incomplete commands
 set incsearch		" Do incremental searching
 set ruler		" Rulers
 set number		" Line numbers
-set scrolloff=3		" Keep cursor visible within 3 lines
+set scrolloff=4		" Keep cursor visible within 4 lines
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
