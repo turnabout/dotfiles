@@ -1,0 +1,7 @@
+Vim tips
+
+## Use currently hovered word for global substitution command
+Use Ctrl-R followed by Ctrl-W.
+```
+:%s<C-r><C-w>/newword/
+```

@@ -48,8 +48,11 @@ Specs on new JustFly left-hand side filters work. “Inspired” by Cheap-O.
 ## Other
 • Show number of results (x found)
 
+• In search results, add descriptive text to depart & return times. E.g.
+  "Leaving New York" instead of "New York"
 
-## Notes/Questions
+
+## Notes/Questions/Suggestions
 • Find a way to refresh filters without re-rendering them entirely.
 
 • About that, if we don't re-render the whole markup entirely, we might want 
@@ -58,5 +61,45 @@ Specs on new JustFly left-hand side filters work. “Inspired” by Cheap-O.
 
 • When you close the matrix, it's gone for good. Different way?
 
-• In search results, add descriptive text to depart & return times. E.g.
-  "Leaving New York" instead of "New York"
+• We might want to make the left filters collapsable like Cheap-O
+
+• "Show all" button should appear ONLY when a filter has been added
+
+• In the matrix, it's not at all obvious you can click on "All Fares" to 
+  filter in all airlines. Since it's an option just like the airlines, it should 
+  be visually similar to the airlines.
+
+• Unlike Cheap-O, you can't click on the Stop options in the matrix 
+  ("Non-Stop & 1 Stop", "2+ Stops") to filter by them. This funtionality would 
+  be easy to add: it should just check/uncheck the corresponding Stop filters.
+
+## Proposal for rework
+1. Filters are all globally linked together. I think we should make one big JS 
+   module that properly holds the current filter states, and changes to this 
+   object are reflected in all concerned filters & parts of the dom 
+   independently of where they're located in the page.
+
+   This means we're no longer re-rendering the left-hand filter.
+   IMO, this makes it easier to centralize all logic in JS, and make the matrix 
+   play nicely with the left filter
+   (currently the matrix gets updated via js manually, rather than by having 
+   its markup fetched and swapped like the left filter). 
+   So it'd be more modulable in the long run.
+
+   So we only render it one time, from the session. 
+   Everytime it's changed, we still send an AJAX call to:
+   1. Update the user sessions, so when they refresh or come back to the page 
+      later, the filters remain the same.
+   2. Fetch the search results with the currently applied filters
+
+2. Let's not change the way search results are fetched, at least not yet. It 
+   works as-is, and while it's not optimal to fetch the entire HTML and swap 
+   the existing one, we're mainly concerned with the filters themselves.
+
+3. I think it would be preferable to write this in pure JS without relying 
+   on frameworks, other than maybe jQuery. Mostly to avoid some framework 
+   quirk from messing up the search page for old browsers.
+
+I think doing things this way will make it much easier to maintain, add 
+new filters, change functionalities, etc. It might be good if left filters & 
+the matrix all live under the same umbrella.
