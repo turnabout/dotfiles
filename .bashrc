@@ -400,6 +400,32 @@ function prodh() {
   ssh mv-deploy
 }
 
+# Start vagrant
+function startvagrant() {
+        cd ~/Document/code/vagrant-dev
+        vagrant up
+}
+
+# Update my branch of filters overhaul
+function ufb() {
+        git checkout jfly/search-filters-overhaul
+        git pull --rebase
+        git checkout jfly/search-filters-vue-frontend
+        git merge jfly/search-filters-overhaul
+}
+
+# Update remote branch of filters overhaul
+function urb() {
+        git checkout jfly/search-filters-overhaul
+        git merge jfly/search-filters-vue-frontend
+        git push
+        git checkout jfly/search-filters-vue-frontend
+}
+
+function solar() {
+        cd ~/Documents/code/travel/solar/
+}
+
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Host name & port

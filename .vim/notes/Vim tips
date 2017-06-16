@@ -5,3 +5,13 @@ Use Ctrl-R followed by Ctrl-W.
 ```
 :%s<C-r><C-w>/newword/
 ```
+
+## Folds
+Open fold: `zo`
+Close fold: `zc`
+Open all folds: `zR`
+Close all folds: `zM`
+
+## Remove highlighting after doing a search
+
+`:nohl`

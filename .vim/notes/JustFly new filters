@@ -103,3 +103,22 @@ Specs on new JustFly left-hand side filters work. “Inspired” by Cheap-O.
 I think doing things this way will make it much easier to maintain, add 
 new filters, change functionalities, etc. It might be good if left filters & 
 the matrix all live under the same umbrella.
+
+## Non-Supported browsers
+Vue.js does not support these browsers and lower:
+• IE 8
+• Android 4.0
+• iOS 5.1
+• Safari 5.0
+• Firefox 19
+• Chrome Who knows? Version 15 works, nothing lower in Browserstack
+• Opera 12.0
+
+Vue.js supports these browsers:
+• IE 9
+• Android 4.1
+• iOS 5.?
+• Safari 5.1
+• Firefox 20
+• Chrome Who knows? Version 15 works, nothing lower in Browserstack
+• Opera 12.12
