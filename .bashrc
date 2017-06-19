@@ -426,6 +426,15 @@ function solar() {
         cd ~/Documents/code/travel/solar/
 }
 
+function gvagrant() {
+        cd ~/Document/code/vagrant-dev
+}
+
+function navicat() {
+        cd ~/Downloads/navicat112_mysql_en_x64
+        ./start_navicat
+}
+
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Host name & port
