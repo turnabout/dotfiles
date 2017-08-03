@@ -114,6 +114,7 @@ Vue.js does not support these browsers and lower:
 • Chrome Who knows? Version 15 works, nothing lower in Browserstack
 • Opera 12.0
 
+
 Vue.js supports these browsers:
 • IE 9
 • Android 4.1
@@ -122,3 +123,86 @@ Vue.js supports these browsers:
 • Firefox 20
 • Chrome Who knows? Version 15 works, nothing lower in Browserstack
 • Opera 12.12
+
+
+Does not work:
+
+* iOS 5.1
+
+### Tests results
+
+iPhone 4S → iOS 5.1:
+iPhone 4S → iOS 6.0:
+• Core works
+• Filters' scroll boxes are messed up, they're much too tall and 
+we can't properly scroll through them.
+• Connection time → "Show layovers up to ** hours" is incorrectly alligned
+
+
+iPhone 5  → iOS 6.0:
+• Same as above. Slightly easier to scroll through filters but still horrendously spaced.
+
+
+iPad 2   → iOS 5.0:
+iPad 3rd → iOS 5.1:
+• Same as above. Sometimes the filters don't appear at all. 
+  Or it seems they take a really long time to appear after clicking their tab.
+  The same goes for the two other tabs (Search & Alerts)
+
+
+iPad 2 → iOS 4.3:
+• Core doesn't work. Loader is a square. Various other CSS issues.
+
+
+iPad Mini → iOS 7.0:
+• Core works
+• Doesn't take forever to open filters & Search/Alerts
+• Filters still horrendously spaced
+
+
+iPhone 5S → iOS 7.0 → Safari:
+iPhone 5S → iOS 7.0 → Chrome:
+• Core works
+• Scroll is weird. Is it just the emulator (Browserstack)?
+• Filters pop-up correctly and work, but still horrendously spaced.
+
+iPhone 6S Plus → iOS 9 → Safari:
+• Core works (obviously)
+• Still has the same scroll issue as all other iOS browsers
+
+
+Google Nexus 7 → Android 6 → Chrome:
+• Core works
+• Everything works, save for the times sliders that don't seem to respond to sliding.
+
+Samsung Galaxy S3 → Android 4.1 → Android Browser:
+• Core works
+• Can't test beyond that, it's too damn slow
+
+Samsung Galaxy S2 → Android 2.3 → Android Browser:
+• Core doesn't work
+
+Nokia 520 → Windows Phone 8.1:
+Nokia 920 → Windows Phone 8.1:
+• Core works
+• Everything works, surprisingly
+
+
+
+### To use old version
+Devices/browsers that need to use the older version of the search filters:
+```
+iOS < 5.0
+Android < 4.1
+
+IE < 9
+Safari < 5.1
+Firefox < 20
+Opera < 12.12 (Yes, 12.12 specifically)
+
+Chrome < Who knows? Version 15 works, nothing lower in Browserstack
+```
+
+### Issues
+• Filters scroll issue in iOS
+• Times filter sliders not sliding

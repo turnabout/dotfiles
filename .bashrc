@@ -422,6 +422,10 @@ function urb() {
         git checkout jfly/search-filters-vue-frontend
 }
 
+function syncb() {
+        gpr && gp && clear
+}
+
 function solar() {
         cd ~/Documents/code/travel/solar/
 }
