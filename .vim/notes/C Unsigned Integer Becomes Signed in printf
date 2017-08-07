@@ -1,0 +1,19 @@
+C Unsigned Integer Becomes Signed in printf
+
+The `printf` function, when using a `%d` format, 
+requires a **signed** integer `int` argument.
+
+Meaning, if the given integer is unsigned, it will 
+be printed as if it were signed, because it will 
+get casted as a signed integer when passed to the 
+`printf` function.
+
+## Example
+```
+   unsigned int u = 5;
+   
+   u = u - 10;
+
+   printf(“%d”, u); /* -5 */
+   printf(“%u”, u); /* 4 294 967 291 */
+```
