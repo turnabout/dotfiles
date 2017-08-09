@@ -439,6 +439,10 @@ function navicat() {
         ./start_navicat
 }
 
+function unfuckpart() {
+        sudo ntfsfix /dev/sda1
+}
+
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Host name & port
