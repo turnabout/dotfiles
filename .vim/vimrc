@@ -111,9 +111,16 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " C
 " ------------------------------------------------------------------------------
-:command Gcc !gcc -g %
-map <leader>gc :Gcc
 
+" Function/Command to save 
+" and compile current file
+:function C_compile_file()
+:w
+!gcc -g %
+:endfunction
+
+:command Gcc :call C_compile_file()
+map <leader>gc :Gcc
 
 
 
