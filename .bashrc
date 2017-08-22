@@ -122,6 +122,11 @@ VIMRUNTIME="/usr/share/vim/vim74"
 # Vim
 vimrc="/home/kevin/.vim/vimrc"
 
+# Xclip for copying to clipboard
+# usage: echo foo | setclip
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o";
+
 # Make directory and then move to it
 mkcd () {
 	mkdir "$1"
