@@ -163,6 +163,7 @@ alias gpr='git pull --rebase'
 alias fuckshitup='git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d'
 alias gs='git status'
 alias v='nvim'
+alias def="/usr/bin/sdcv"
 
 
 # 
