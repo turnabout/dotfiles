@@ -12,6 +12,8 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+EDITOR="nvim"; export EDITOR
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
