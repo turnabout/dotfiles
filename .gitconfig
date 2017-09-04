@@ -6,4 +6,3 @@
 [credential]
 	helper = cache --timeout=86400
 [alias]
-	addcom = !git add -A && git commit
