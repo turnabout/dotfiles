@@ -451,6 +451,11 @@ function unfuckpart() {
         sudo ntfsfix /dev/sda1
 }
 
+# Reload xbindkeys
+function reloadx() {
+        killall -HUP xbindkeys
+}
+
 export PATH="~/.config/composer/vendor/bin:$PATH":$PATH:~/bin
 
 # Host name & port
@@ -467,3 +472,8 @@ if command_exists tmux ; then
 fi
 export NVM_DIR="/home/k_pageau/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Start xbindkeys
+if command_exists xbindkeys; then
+  xbindkeys
+fi
