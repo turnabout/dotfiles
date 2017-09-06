@@ -46,6 +46,15 @@
     m:0xc + c:28
     Control+Alt + t
 
+# TODO: Only open if there isn't already an instance running
+"xfce4-appfinder --collapsed"
+    Super_L
+
+"testyness"
+    m:0x4 + c:82
+    Control + KP_Subtract
+
+
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
 #  c:41 + m:0x4
