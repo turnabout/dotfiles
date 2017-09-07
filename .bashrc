@@ -456,6 +456,11 @@ function reloadx() {
         killall -HUP xbindkeys
 }
 
+# Open C book
+function cb() {
+        evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
+}
+
 export PATH=$PATH:/sbin
 
 # Host name & port
