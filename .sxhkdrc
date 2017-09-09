@@ -1,0 +1,17 @@
+super + e
+ thunar
+
+super + o
+ thunar
+
+super + i
+ thunar
+
+super + t
+ thunar
+
+super + y
+ ristretto
+
+ctrl + alt + t
+ xfce4-terminal --hide-menubar --hide-scrollbar

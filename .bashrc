@@ -461,20 +461,21 @@ function cb() {
         evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
 }
 
-export PATH=$PATH:/sbin
+export PATH=$PATH:/sbin:~/bin
 
 # Host name & port
 export HOST="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
 export PORT="8080"
 
 # Start tmux automatically
-if command_exists tmux ; then
-  tmux attach &> /dev/null
+#if command_exists tmux ; then
+  #tmux attach &> /dev/null
+#
+  #if [[ ! $TERM =~ screen ]]; then
+      #exec tmux
+  #fi
+#fi
 
-  if [[ ! $TERM =~ screen ]]; then
-      exec tmux
-  fi
-fi
 export NVM_DIR="/home/k_pageau/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
