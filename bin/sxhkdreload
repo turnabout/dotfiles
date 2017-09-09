@@ -1,0 +1,3 @@
+# Reload sxhkd configuration file
+pkill -USR1 -x sxhkd
+echo "sxhkd Config Reloaded"
