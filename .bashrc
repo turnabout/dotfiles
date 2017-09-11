@@ -447,8 +447,10 @@ function navicat() {
         ./start_navicat
 }
 
-function unfuckpart() {
+# Un-mess sda1
+function unfucksda1() {
         sudo ntfsfix /dev/sda1
+        sudo mount -o remount,rw /dev/sda1 /media/kevin/data
 }
 
 # Reload xbindkeys
