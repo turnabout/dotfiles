@@ -395,17 +395,16 @@ function phpset() {
 
 # Ssh to production server
 function prod() {
-  ssh web1@ded3003.ded.reflected.net
+  ssh production
+}
+
+function staging() {
+        ssh staging
 }
 
 # Refresh ssh-add
 function refressh() {
   ssh-add ~/.ssh/id_rsa
-}
-
-# SSH to production server (for home)
-function prodh() {
-  ssh mv-deploy
 }
 
 # Start vagrant
