@@ -3,138 +3,130 @@ set nocompatible
 execute pathogen#infect()
 
 
-" Unsorted
+
+" Plugin specific
 " ------------------------------------------------------------------------------
-set updatetime=250
+
+
+" vim-notes
+" ------------------------------------------------
 let g:notes_directories = ['~/.dotfiles/.vim/notes']
-:set hlsearch
 
-" <Ctrl>+/ - map to toggle comments
-map <C-_> <leader>ci
+map <leader>n  :Note
+map <leader>sn :SearchNotes
 
-" <Ctrl>+/ - Add single line C comment
-imap <C-_> /**/jkhi<space><space>jki
 
-" <Ctrl>+n - Add a multi line C comment
-imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
-
-map <leader>n :Note 
-map <leader>sn :SearchNotes 
-
-" Move current line up or down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
+" quick-scope
+" ------------------------------------------------
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Highlight active line and column
-:set cursorline
-:set cursorcolumn
 
-" Color scheme
+
+" Mappings
 " ------------------------------------------------------------------------------
-set t_Co=256 
-syntax on
-colorscheme jellybeans
-" let g:molokai_original = 1
 
 
-" Key mappings
-" ------------------------------------------------------------------------------
-" <space> as <leader>
-:map <space> \
-
+" Insert
+" ------------------------------------------------
 " jk/kj to leave insert mode
-:inoremap jk <esc>
-:inoremap kj <esc>
-
-" Remove <esc> to leave insert mode
-:inoremap <esc> <nop>
-
-" Delete line and reenter insert mode
-:imap <c-d> jkddi
-
-:vmap <Tab> >
-
-" Macros
-" ------------------------------------------------------------------------------
+inoremap jk <esc>
+inoremap kj <esc>
 
 
-" Other key mappings - Insert mode
-" ------------------------------------------------------------------------------
-
-" EOL Semicolon
-noremap <C-m> A;<Esc>
+" Normal
+" ------------------------------------------------
+" Use <space> as <leader>
+map <space> \
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
+" EOL Semicolon
+noremap <C-m> A;<Esc>
+
+" Toggle comment
+map <C-_> <leader>ci
+
+" Move current line up/down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+
+" Visual
+" ------------------------------------------------
+" Tab to indent
+vmap <Tab> >
+
+" Move current line(s) up/down
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+
+
 " Settings
 " ------------------------------------------------------------------------------
-set history=50		" Keep 50 lines of command line history
-set ruler		" Show the cursor position all the time
-set showcmd		" Display incomplete commands
-set incsearch		" Do incremental searching
-set ruler		" Rulers
-set number		" Line numbers
-set scrolloff=4		" Keep cursor visible within 4 lines
+set history=50		  " Keep 50 lines of command line history
+set ruler		  " Show the cursor position all the time
+set showcmd		  " Display incomplete commands
+set incsearch		  " Do incremental searching
+set ruler		  " Rulers
+set number		  " Line numbers
+set scrolloff=4		  " Keep cursor visible within 4 lines
+set whichwrap=h,l         " h and l wrap around lines
+set clipboard=unnamedplus " Auto use the system clipboard
+set updatetime=750        " Idle time before changes written to swap file
+set hlsearch              " Highlight search results
+set cursorline            " Highlight active line
+set cursorcolumn          " Highlight active column
+set expandtab             " Use spaces when inserting <Tab>
+set tabstop=4             " Number of spaces a <Tab> counts for
+set softtabstop=4         " Number of spaces a <Tab> counts for while editing
 
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start " Allow backspace over all in insert mode
 
-" h and l wrap around lines
-set whichwrap=h,l
+
+
+" Colors and customization
+" ------------------------------------------------------------------------------
+" Activate syntax
+set t_Co=256
+syntax on
+colorscheme jellybeans
+
+" Color column
+" 50 (Git commit) - 80 (Code)
+let &colorcolumn=join(range(51,80),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Status line
 set statusline=%f\        " Filename
 set statusline+=%y\       " Filetype of the file
 set statusline+=%c        " Column number
 
-" Auto use the system clipboard
-set clipboard=unnamedplus
-
-
-" Tabs to spaces
-" ------------------------------------------------------------------------------
-:set expandtab
-:set tabstop=8
-:set softtabstop=8
-
-
-" Color column
-" 50 (Git commit)
-" 80 (Code)
-" ------------------------------------------------------------------------------
-let &colorcolumn=join(range(51,80),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " C
 " ------------------------------------------------------------------------------
+" Save and compile current file
+function C_compile_file()
+    w
+    !gcc -g %
+endfunction
 
-" Function/Command to save 
-" and compile current file
-:function C_compile_file()
-:w
-!gcc -g %
-:endfunction
+map <leader>gc :call C_compile_file()
 
-:command Gcc :call C_compile_file()
-map <leader>gc :Gcc
+" Single line C comment
+imap <C-_> /**/jkhi<space><space>jki
+
+" Multi line C comment
+imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
 
 
 
-
-
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Only do this part when compiled with support for autocommands.
+" From defaults
+" ------------------------------------------------------------------------------
+" Only when compiled with support for autocommands.
 if has("autocmd")
 
   " Enable file type detection.
