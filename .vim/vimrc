@@ -66,13 +66,13 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Settings
 " ------------------------------------------------------------------------------
-set history=50		  " Keep 50 lines of command line history
-set ruler		  " Show the cursor position all the time
-set showcmd		  " Display incomplete commands
-set incsearch		  " Do incremental searching
-set ruler		  " Rulers
-set number		  " Line numbers
-set scrolloff=4		  " Keep cursor visible within 4 lines
+set history=50            " Keep 50 lines of command line history
+set ruler                 " Show the cursor position at all time
+set showcmd               " Display incomplete commands
+set incsearch             " Do incremental searching
+set ruler                 " Rulers
+set number                " Line numbers
+set scrolloff=4           " Keep cursor visible within 4 lines
 set whichwrap=h,l         " h and l wrap around lines
 set clipboard=unnamedplus " Auto use the system clipboard
 set updatetime=750        " Idle time before changes written to swap file
