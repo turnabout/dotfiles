@@ -5,11 +5,8 @@
    ▀█▄██  ▀█▄█▀    ▀▄▄    █    ▄▄█▄▄    ▀▄▄  ▀█▄▄▀  ▀▄▄▄▀ 
                                                           
 
-My dotfiles files kept in a tidy repo.
-
-Installation
+Usage
 --------------------------------------------------------------------------------
-Quick start::
     cd ~
     git clone https://github.com/turnabout/dotfiles
     mv dotfiles .dotfiles
