@@ -1,6 +1,4 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -8,55 +6,35 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
+# Don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 EDITOR="nvim"; export EDITOR
 
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# For setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
+# Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
+# Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
+# Set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
+# Set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -74,7 +52,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -86,28 +64,21 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# ls aliases
+alias ll="ls -alF"
+alias la="ls -A"
+alias l="ls -CF"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# Load alias definitions file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
@@ -121,51 +92,16 @@ fi
 # Environment variables
 VIMRUNTIME="/usr/share/vim/vim74"
 
-# Vim
-vimrc="/home/kevin/.vim/vimrc"
-
-# Xclip for copying to clipboard
-# usage: echo foo | setclip
-alias setclip="xclip -selection c"
-alias getclip="xclip -selection c -o";
-
 # Make directory and then move to it
 mkcd () {
 	mkdir "$1"
 	cd "$1"
 }
 
-# Start win7 VM with Photoshop
-photoshop() {
-	VBoxManage startvm windows_7
-	exit
-}
-
-# Start gvim and exit terminal
-gvimq() {
-	gvim "$1"
-	exit
-}
-
+# Dig with simple output
 digbare() {
 	dig $1 +nostats +nocomments +nocmd
 }
-
-
-# Aliases
-alias python=python3.5
-alias fucking=sudo
-alias cls='clear'
-alias cd..='cd ..'
-alias fuck='sudo $(history -p \!\!)'
-alias gc='git checkout'
-alias gcn='git checkout -b '
-alias ga='git add -A && git commit'
-alias gpr='git pull --rebase'
-alias fuckshitup='git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d'
-alias gs='git status'
-alias v='nvim'
-alias def="/usr/bin/sdcv"
 
 
 # 
@@ -378,88 +314,24 @@ function grh() {
 
 
 # 
-# Momentum Functions
+# Werk-related
 # 
 
-# Pull in remote branch changes and merge develop branch into current one
-# ** Only do this when checking out new feature/fix branch you're working on **
-function dmer() {
-  git remote update
-  git merge origin/develop
-}
+alias prod="ssh production"
+alias staging="ssh staging"
+alias solar="cd ~/Documents/code/travel/solar/"
+alias navicat="cd ~/Downloads/navicat112_mysql_en_x64 && ./start_navicat"
+        
 
-# Cd to PhpStorm settings directory
-function phpset() {
-  cd "/home/${USER}/.PhpStorm2016.2/config"
-}
-
-# Ssh to production server
-function prod() {
-  ssh production
-}
-
-function staging() {
-        ssh staging
-}
-
-# Refresh ssh-add
-function refressh() {
-  ssh-add ~/.ssh/id_rsa
-}
-
-# Start vagrant
-function startvagrant() {
-        cd ~/Document/code/vagrant-dev
-        vagrant up
-}
-
-# Update my branch of filters overhaul
-function ufb() {
-        git checkout jfly/search-filters-overhaul
-        git pull --rebase
-        git checkout jfly/search-filters-vue-frontend
-        git merge jfly/search-filters-overhaul
-}
-
-# Update remote branch of filters overhaul
-function urb() {
-        git checkout jfly/search-filters-overhaul
-        git merge jfly/search-filters-vue-frontend
-        git push
-        git checkout jfly/search-filters-vue-frontend
-}
-
-function syncb() {
-        gpr && gp && clear
-}
-
-function solar() {
-        cd ~/Documents/code/travel/solar/
-}
-
-function gvagrant() {
-        cd ~/Document/code/vagrant-dev
-}
-
-function navicat() {
-        cd ~/Downloads/navicat112_mysql_en_x64
-        ./start_navicat
-}
-
-# Un-mess sda1
+# Un-fuck  sda1
 function unfucksda1() {
-        sudo ntfsfix /dev/sda1
-        sudo mount -o remount,rw /dev/sda1 /media/kevin/data
-}
-
-# Reload xbindkeys
-function reloadx() {
-        killall -HUP xbindkeys
+    sudo ntfsfix /dev/sda1
+    sudo mount -o remount,rw /dev/sda1 /media/kevin/data
 }
 
 # Open C book
 function cb() {
-        evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
+    evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
 }
 
 export PATH=$PATH:/sbin:~/bin
