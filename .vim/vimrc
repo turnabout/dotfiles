@@ -194,4 +194,4 @@ endif
 " | Other                                                                      |
 " +----------------------------------------------------------------------------+
 " Recognize custom file extensions as shell scripts
-autocmd BufRead,BufNewFile *.bash_functions set filetype=sh
+autocmd BufRead,BufNewFile .bash_* set filetype=sh

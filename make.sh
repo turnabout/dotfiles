@@ -26,6 +26,7 @@ files="
 .sxhkdrc 
 .bash_aliases 
 .bash_functions
+.bash_git
 bin
 "
 
