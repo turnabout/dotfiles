@@ -1,17 +1,32 @@
-################################################################################
-# make.sh
-# Creates symlinks from the home directory 
-# to any desired dotfiles in ~/.dotfiles
-################################################################################
+#                                                   
+#                 █                           █     
+#   ▄▄▄▄▄   ▄▄▄   █   ▄   ▄▄▄           ▄▄▄   █ ▄▄  
+#   █ █ █  ▀   █  █ ▄▀   █▀  █         █   ▀  █▀  █ 
+#   █ █ █  ▄▀▀▀█  █▀█    █▀▀▀▀          ▀▀▀▄  █   █ 
+#   █ █ █  ▀▄▄▀█  █  ▀▄  ▀█▄▄▀    █    ▀▄▄▄▀  █   █ 
+#                                                   
+                                                 
+# Creates dotfiles repo symlinks
 
 
-# Variables
-dir=~/.dotfiles             # Dotfiles directory
-olddir=~/dotfiles_old       # Old dotfiles backup directory
-files=".bash_logout .bashrc .gitconfig .profile .tmux.conf .vim .sxhkdrc .bash_aliases bin"
+# Old dotfiles backup directory
+olddir=~/dotfiles_old
 
-# Move dotfiles to .dotfiles hidden folder
-# mv ~/.dotfiles $dir
+# Dotfiles directory
+dir=~/.dotfiles
+
+# All files to symlink
+files="
+.bash_logout 
+.bashrc 
+.gitconfig 
+.profile 
+.tmux.conf 
+.vim 
+.sxhkdrc 
+.bash_aliases 
+bin
+"
 
 mkdir -p $olddir
 cd $dir
@@ -23,6 +38,6 @@ for file in $files; do
   ln -s $dir/$file ~/$file
 done
 
-# Create directories for neovim init file & create symlink
+# Create directories for neovim init file & symlink
 mkdir -p ~/.config/nvim
 ln $dir/.vim/nvimrc ~/.config/nvim/init.vim

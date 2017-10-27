@@ -1,41 +1,50 @@
-set nocompatible
+"                                     
+"            ▀                        
+"   ▄   ▄  ▄▄▄    ▄▄▄▄▄   ▄ ▄▄   ▄▄▄  
+"   ▀▄ ▄▀    █    █ █ █   █▀  ▀ █▀  ▀ 
+"    █▄█     █    █ █ █   █     █     
+"     █    ▄▄█▄▄  █ █ █   █     ▀█▄▄▀ 
+"                                     
 
+
+
+" +----------------------------------------------------------------------------+
+" | Plugins                                                                    |
+" +----------------------------------------------------------------------------+
 execute pathogen#infect()
 
-
-
-" Plugin specific
-" ------------------------------------------------------------------------------
-
-
-" vim-notes
-" ------------------------------------------------
+" +----------------------------------------------+
+" |  vim-notes                                   |
+" +----------------------------------------------+
 let g:notes_directories = ['~/.dotfiles/.vim/notes']
 
 map <leader>n  :Note
 map <leader>sn :SearchNotes
 
 
-" quick-scope
-" ------------------------------------------------
+" +----------------------------------------------+
+" |  quick-scope                                 |
+" +----------------------------------------------+
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
 
-" Mappings
-" ------------------------------------------------------------------------------
+" +----------------------------------------------------------------------------+
+" | Mappings                                                                   |
+" +----------------------------------------------------------------------------+
 
-
-" Insert
-" ------------------------------------------------
+" +----------------------------------------------+
+" |  Insert                                      |
+" +----------------------------------------------+
 " jk/kj to leave insert mode
 inoremap jk <esc>
 inoremap kj <esc>
 
 
-" Normal
-" ------------------------------------------------
+" +----------------------------------------------+
+" |  Normal                                      |
+" +----------------------------------------------+
 " Use <space> as <leader>
 map <space> \
 
@@ -53,8 +62,9 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
 
-" Visual
-" ------------------------------------------------
+" +----------------------------------------------+
+" |  Visual                                      |
+" +----------------------------------------------+
 " Tab to indent
 vmap <Tab> >
 
@@ -64,31 +74,34 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 
 
-" Settings
-" ------------------------------------------------------------------------------
-set history=50            " Keep 50 lines of command line history
-set ruler                 " Show the cursor position at all time
-set showcmd               " Display incomplete commands
-set incsearch             " Do incremental searching
-set ruler                 " Rulers
-set number                " Line numbers
-set scrolloff=4           " Keep cursor visible within 4 lines
-set whichwrap=h,l         " h and l wrap around lines
-set clipboard=unnamedplus " Auto use the system clipboard
-set updatetime=750        " Idle time before changes written to swap file
-set hlsearch              " Highlight search results
-set cursorline            " Highlight active line
-set cursorcolumn          " Highlight active column
-set expandtab             " Use spaces when inserting <Tab>
-set tabstop=4             " Number of spaces a <Tab> counts for
-set softtabstop=4         " Number of spaces a <Tab> counts for while editing
+" +----------------------------------------------------------------------------+
+" | Settings                                                                   |
+" +----------------------------------------------------------------------------+
+set history=50             " Keep 50 lines of command line history
+set ruler                  " Show the cursor position at all time
+set showcmd                " Display incomplete commands
+set incsearch              " Do incremental searching
+set ruler                  " Rulers
+set number                 " Line numbers
+set scrolloff=4            " Keep cursor visible within 4 lines
+set whichwrap=h,l          " h and l wrap around lines
+set clipboard=unnamedplus  " Auto use the system clipboard
+set updatetime=750         " Idle time before changes written to swap file
+set hlsearch               " Highlight search results
+set cursorline             " Highlight active line
+set cursorcolumn           " Highlight active column
+set expandtab              " Use spaces when inserting <Tab>
+set tabstop=4              " Number of spaces a <Tab> counts for
+set softtabstop=4          " Number of spaces a <Tab> counts for while editing
+set shiftwidth=4           " Number of spaces an entered <Tab> will translate to
 
 set backspace=indent,eol,start " Allow backspace over all in insert mode
 
 
 
-" Colors and customization
-" ------------------------------------------------------------------------------
+" +----------------------------------------------------------------------------+
+" | Colors and customization                                                   |
+" +----------------------------------------------------------------------------+
 " Activate syntax
 set t_Co=256
 syntax on
@@ -106,8 +119,9 @@ set statusline+=%c        " Column number
 
 
 
-" C
-" ------------------------------------------------------------------------------
+" +----------------------------------------------------------------------------+
+" | C programming                                                              |
+" +----------------------------------------------------------------------------+
 " Save and compile current file
 function C_compile_file()
     w
@@ -124,8 +138,9 @@ imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
 
 
 
-" From defaults
-" ------------------------------------------------------------------------------
+" +----------------------------------------------------------------------------+
+" | From defaults                                                              |
+" +----------------------------------------------------------------------------+
 " Only when compiled with support for autocommands.
 if has("autocmd")
 
