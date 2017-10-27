@@ -187,3 +187,11 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
+
+
+
+" +----------------------------------------------------------------------------+
+" | Other                                                                      |
+" +----------------------------------------------------------------------------+
+" Recognize custom file extensions as shell scripts
+autocmd BufRead,BufNewFile *.bash_functions set filetype=sh

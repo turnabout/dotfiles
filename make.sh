@@ -25,6 +25,7 @@ files="
 .vim 
 .sxhkdrc 
 .bash_aliases 
+.bash_functions
 bin
 "
 
