@@ -5,6 +5,7 @@
 #     █    █   █  █   █  █        █      █    █   █  █   █   ▀▀▀▄ 
 #     █    ▀▄▄▀█  █   █  ▀█▄▄▀    ▀▄▄  ▄▄█▄▄  ▀█▄█▀  █   █  ▀▄▄▄▀ 
 #                                                                 
+# 
 
 
 # +----------------------------------------------------------------------------+
@@ -60,12 +61,12 @@ function syncdot() {
 
 # Open vimrc in vim
 function vrc() {
-    nvim ~/.dotfiles/.vim/vimrc
+    ${EDITOR} ~/.dotfiles/.vim/vimrc
 }
 
 # Open bashrc in vim
 function brc() {
-    nvim ~/.dotfiles/.bashrc 
+    ${EDITOR} ~/.dotfiles/.bashrc 
 }
 
 # Open all bash dotfiles in new tmux session

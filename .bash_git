@@ -33,8 +33,7 @@ function gp() {
 
 # Add all & push
 function gap() {
-    ga
-    gp
+    ga && gp
 }
 
 # Remote update
