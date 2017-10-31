@@ -71,35 +71,41 @@ function brc() {
 # Open all bash dotfiles in new tmux session
 function brca() {
 
+    # Bash dotfiles to be opened in 4-way panes.
+    # Opened in order:
+    # 0 1
+    # 2 3
+    brcfiles=(".bashrc" ".bash_aliases" ".bash_git" ".bash_functions")
+
+    # Window name for the bash dotfiles
     winName="bash_dots"
 
-    # If already in a session, create new window
     if [ $TMUX ]; then
 
-        # Create all 4 panes
-        # Keep reference to pane IDs to know where to split
-        newWinId=$(tmux neww -P -n ${winName} "nvim ~/.bashrc")
-        bottomId=$(tmux split-window -vP -t ${newWinId} "nvim ~/.bash_functions")
+        # If already in a session, create new window
+        newWinId=$(tmux neww -P -n ${winName} "${EDITOR} ~/${brcfiles[0]}")
+    else
 
-        tmux split-window -hP -t ${newWinId} "nvim ~/.bash_aliases"
-        tmux split-window -h -t ${bottomId} "nvim ~/.bash_git"
-
-        # Focus the new window
-        tmux selectw -t ${newWinId}
-
-        clear
-        return 1
+        # If not in an existing session, create new session
+        tmux new-session -P -s "bash_dots" -d
+        newWinId=$(tmux neww -P -n ${winName} "${EDITOR} ~/${brcfiles[0]}")
     fi
 
-    # Not in an existing session, create new session
-    tmux new-session -s "bash_dots" -d "nvim ~/.bash_aliases"
+    # Create all 4 panes
+    # Keep reference to bottom-left pane ID to know where to split
+    bottomId=$(tmux split-window -vP -t ${newWinId} "${EDITOR} ~/${brcfiles[2]}")
 
-    tmux split-window -v "nvim ~/.bash_functions"
-    tmux split-window -h "nvim ~/.bash_git"
-    tmux selectp -t 0
-    tmux split-window -h "nvim ~/.bashrc"
+    tmux split-window -hP -t ${newWinId} "${EDITOR} ~/${brcfiles[1]}"
+    tmux split-window -h -t ${bottomId} "${EDITOR} ~/${brcfiles[3]}"
 
-    tmux attach -t bash_dots
+    clear
+
+    # Focus new window or attach new session
+    if [ $TMUX ]; then
+        tmux selectw -t ${newWinId}
+    else
+        tmux attach -t ${winName}
+    fi
 }
 
 
