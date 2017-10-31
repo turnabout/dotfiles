@@ -71,65 +71,35 @@ function brc() {
 # Open all bash dotfiles in new tmux session
 function brca() {
 
+    winName="bash_dots"
+
     # If already in a session, create new window
-    # Else, create new session
     if [ $TMUX ]; then
-        tmux new-window -s "bash_dots"
-    else
-        tmux new-session -s "bash_dots" -d "nvim ~/.bash_aliases"
+
+        # Create all 4 panes
+        # Keep reference to pane IDs to know where to split
+        newWinId=$(tmux neww -P -n ${winName} "nvim ~/.bashrc")
+        bottomId=$(tmux split-window -vP -t ${newWinId} "nvim ~/.bash_functions")
+
+        tmux split-window -hP -t ${newWinId} "nvim ~/.bash_aliases"
+        tmux split-window -h -t ${bottomId} "nvim ~/.bash_git"
+
+        # Focus the new window
+        tmux selectw -t ${newWinId}
+
+        clear
+        return 1
     fi
+
+    # Not in an existing session, create new session
+    tmux new-session -s "bash_dots" -d "nvim ~/.bash_aliases"
 
     tmux split-window -v "nvim ~/.bash_functions"
     tmux split-window -h "nvim ~/.bash_git"
     tmux selectp -t 0
     tmux split-window -h "nvim ~/.bashrc"
 
-    # tmux -2 attach-session -d
-
-    # If not already in a session, attach to new
-    if [ !$TMUX ]; then
-        tmux attach -t bash_dots
-    fi
-}
-
-function btesty() {
-    # almost finished
-    newWinName="bash_dots"
-
-    newWinId=$(tmux neww -P -n ${newWinName} "nvim ~/.bashrc")
-
-    tmux split-window -vP -t ${newWinId} "nvim ~/.bash_functions"
-    tmux split-window -hP -t ${newWinId} "nvim ~/.bash_aliases"
-
-    tmux selectw -t ${newWinId}
-
-    clear
-
-
-    #bottomPaneId=$(tmux split-window -vP -t ${newWinId} "nvim ~/.bash_functions")
-    #tmux split-window -h "nvim ~/.bash_git" -t ${bottomPaneId}
-
-
-    #tmux selectw -t ${newWinName}
-
-    #tmux split-window -v "nvim ~/.bash_functions" -t ${newWinId}
-    #tmux split-window -h "nvim ~/.bash_git" -t ${newWinId}
-    #tmux selectp -t 0
-    #tmux split-window -h "nvim ~/.bashrc" -t ${newWinId}
-}
-
-
-function helpme() {
-    if [ $TMUX ]; then
-        echo "TMUX"
-    else
-        echo "NOT TMUX"
-    fi
-
-    if [ !$TMUX ]; then
-        echo "NOT TMUX"
-    fi
-
+    tmux attach -t bash_dots
 }
 
 
