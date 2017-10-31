@@ -1,0 +1,62 @@
+Tmux notes
+
+==================================================
+Key bindings
+==================================================
+
+q
+.........................
+Briefly display all pane indexes
+
+
+q
+.........................
+Briefly display all pane indexes
+
+
+q
+.........................
+Briefly display all pane indexes
+
+
+
+
+q
+.........................
+Briefly display all pane indexes
+
+r
+.........................
+Reload tmux conf
+
+t
+.........................
+Display time in current pane
+
+z
+.........................
+Toggle zoom state in current pane
+
+:
+.........................
+Toggle zoom state in current pane
+
+?
+.........................
+List keybindings
+
+$
+.........................
+Rename current session
+
+
+Commands
+==================================================
+
+selectp
+.........................
+Select a pane. Use `-t` flag to select pane by its number.
+
+Example::
+    # select the first (0) pane
+    selectp -t 0 
