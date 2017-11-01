@@ -96,8 +96,8 @@ function brca() {
     # Keep reference to bottom-left pane ID to know where to split
     bottomId=$(tmux split-window -vP -t ${newWinId} "${EDITOR} ~/${brcfiles[2]}")
 
-    tmux split-window -hP -t ${newWinId} "${EDITOR} ~/${brcfiles[1]}"
     tmux split-window -h -t ${bottomId} "${EDITOR} ~/${brcfiles[3]}"
+    tmux split-window -hP -t ${newWinId} "${EDITOR} ~/${brcfiles[1]}"
 
     clear
 
