@@ -82,6 +82,35 @@ function brca() {
     tsplit "${args[@]}"
 }
 
+# Split into 4 panes
+function tms() {
+
+    if [ $TMUX ]; then
+        # Split 3 times
+        tmux split-window -h
+        tmux split-window -v
+        tmux split-window -v -t 1
+    else
+        # Generate random session name
+        sessName=$(
+            cat /dev/urandom | 
+            tr -dc 'a-zA-Z0-9' | 
+            fold -w 12 | 
+            head -n 1
+        )
+
+        tmux new-session -s ${sessName} -d
+
+        # Create 4 panes
+        winId=$(tmux neww -P -n ${sessName})
+        tmux split-window -vP -t ${sessName}
+
+        tmux split-window -h -t ${sessName}
+        tmux split-window -h -t ${winId}
+
+        tmux attach -t ${sessName}
+    fi
+}
 
 # +----------------------------------------------------------------------------+
 # + Other Install-specific helpers                                             |
@@ -127,11 +156,8 @@ function cb() {
 #   None
 ##################################################
 function tsplit() {
-
-    # Commands to be opened in 4 panes
+    # Get commands to be opened in 4 panes & window name
     cmds=("$@")
-
-    # Window name
     winName=${cmds[4]}
 
     if [ $TMUX ]; then
@@ -141,11 +167,11 @@ function tsplit() {
     else
 
         # If not in an existing session, create new session
-        tmux new-session -P -s ${winName} -d
+        tmux new-session -s ${winName} -d
         newWinId=$(tmux neww -P -n ${winName} "${cmds[0]}")
     fi
 
-    # Create all 4 panes
+    # Create remaining 3 panes
     # Keep reference to bottom-left pane ID to know where to split
     bottomId=$(tmux split-window -vP -t ${newWinId} "${cmds[2]}")
 
