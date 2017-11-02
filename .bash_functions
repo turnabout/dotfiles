@@ -85,31 +85,37 @@ function brca() {
 # Split into 4 panes
 function tms() {
 
+    # Already in tmux session, just split
     if [ $TMUX ]; then
         # Split 3 times
         tmux split-window -h
         tmux split-window -v
-        tmux split-window -v -t 1
-    else
-        # Generate random session name
-        sessName=$(
-            cat /dev/urandom | 
-            tr -dc 'a-zA-Z0-9' | 
-            fold -w 12 | 
-            head -n 1
-        )
-
-        tmux new-session -s ${sessName} -d
-
-        # Create 4 panes
-        winId=$(tmux neww -P -n ${sessName})
-        tmux split-window -vP -t ${sessName}
-
-        tmux split-window -h -t ${sessName}
-        tmux split-window -h -t ${winId}
-
-        tmux attach -t ${sessName}
+        tmux split-window -v -t 0
+        clear
+        return 1
     fi
+
+    # No tmux session, create one
+
+    # Generate random session name
+    sessName=$(
+        cat /dev/urandom | 
+        tr -dc 'a-zA-Z0-9' | 
+        fold -w 12 | 
+        head -n 1
+    )
+
+    tmux new-session -s ${sessName} -d
+
+    # Create 4 panes
+    winId=$(tmux neww -P -n ${sessName})
+    tmux split-window -vP -t ${sessName}
+
+    tmux split-window -h -t ${sessName}
+    tmux split-window -h -t ${winId}
+
+    tmux attach -t ${sessName}
+    clear
 }
 
 # +----------------------------------------------------------------------------+
