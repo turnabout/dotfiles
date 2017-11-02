@@ -141,7 +141,7 @@ function tsplit() {
     else
 
         # If not in an existing session, create new session
-        tmux new-session -P -s "bash_dots" -d
+        tmux new-session -P -s ${winName} -d
         newWinId=$(tmux neww -P -n ${winName} "${cmds[0]}")
     fi
 
