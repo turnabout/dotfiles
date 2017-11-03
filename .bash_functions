@@ -138,6 +138,12 @@ function cb() {
     evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
 }
 
+# Reload sxhkd configuration file
+function sxhkdre() {
+    pkill -USR1 -x sxhkd
+    echo "sxhkd Config Reloaded"
+}
+
 
 # +----------------------------------------------------------------------------+
 # + Internal functions                                                         |
