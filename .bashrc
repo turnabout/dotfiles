@@ -58,10 +58,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-# +----------------------------------------------------------------------------+
-# + Load split bashrc files                                                    |
-# +----------------------------------------------------------------------------+
 
+# +----------------------------------------------------------------------------+
+# | Load split bashrc files                                                    |
+# +----------------------------------------------------------------------------+
 # Aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -76,7 +76,6 @@ fi
 if [ -f ~/.bash_git ]; then
     . ~/.bash_git
 fi
-
 
 # Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

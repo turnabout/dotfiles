@@ -6,7 +6,6 @@
 "                             
 
 
-
 " +----------------------------------------------------------------------------+
 " | Plugins                                                                    |
 " +----------------------------------------------------------------------------+
@@ -20,13 +19,11 @@ let g:notes_directories = ['~/.dotfiles/.vim/notes']
 map <leader>n  :Note
 map <leader>sn :SearchNotes
 
-
 " +----------------------------------------------+
 " |  quick-scope                                 |
 " +----------------------------------------------+
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
 
 
 " +----------------------------------------------------------------------------+
@@ -70,7 +67,6 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 
-
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
 " +----------------------------------------------------------------------------+
@@ -95,7 +91,6 @@ set shiftwidth=4           " Number of spaces an entered <Tab> will translate to
 set backspace=indent,eol,start " Allow backspace over all in insert mode
 
 
-
 " +----------------------------------------------------------------------------+
 " | Colors and customization                                                   |
 " +----------------------------------------------------------------------------+
@@ -115,7 +110,6 @@ set statusline+=%y\       " Filetype of the file
 set statusline+=%c        " Column number
 
 
-
 " +----------------------------------------------------------------------------+
 " | C programming                                                              |
 " +----------------------------------------------------------------------------+
@@ -132,7 +126,6 @@ imap <C-_> /**/jkhi<space><space>jki
 
 " Multi line C comment
 imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
-
 
 
 " +----------------------------------------------------------------------------+
@@ -184,7 +177,6 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-
 
 
 " +----------------------------------------------------------------------------+

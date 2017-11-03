@@ -147,24 +147,24 @@ function sxhkdre() {
 # | Internal functions                                                         |
 # +----------------------------------------------------------------------------+
 
-##################################################
+#
 # Open tmux session or window with 4 panes.
 #
 # Globals:
 #   None
 # 
 # Arguments:
-# $@ Array containing 4 command strings to execute 
-#    in all 4 panes.
-#    Panes/commands are opened in order:
-#    0 1
-#    2 3
+#   $@ Array containing 4 command strings to execute 
+#      in all 4 panes.
+#      Panes are opened w/ corresponding commands in order:
+#      0 1
+#      2 3
 #
-#    Last index contains the new window name.
+#      Last index contains the new window name.
 #
 # Returns:
 #   None
-##################################################
+#
 function tsplit() {
     # Get commands to be opened in 4 panes & window name
     cmds=("$@")
