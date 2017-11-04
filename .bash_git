@@ -63,6 +63,7 @@ ps1_red='\['"$red"'\]'
 ps1_green='\['"$green"'\]'
 ps1_white='\['"$white"'\]'
 
+# Print the branch name and status to be displayed in the command line prompt
 function parse_git_branch() {
     gitstatus=`git status 2> /dev/null`
     if [[ `echo $gitstatus | grep "Changes to be committed"` != "" ]]
@@ -94,9 +95,4 @@ function parse_git_branch_color() {
     fi
 }
 
-# No color:
-#export PS1="@\h:\W\$(parse_git_branch) \$ "
-
-# With color:
-# export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "
 export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "

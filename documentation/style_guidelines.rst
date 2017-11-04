@@ -13,6 +13,9 @@ They must:
 1. Be generated with the `figlet` utility, using the standard default font.
 2. Span exactly 6 lines in height, with one empty comment line at the bottom of it.
 3. Span no more than 80 columns in width.
+4. Have no empty lines above them.
+5. Always have exactly 2 empty lines below them, independent of the element
+   that comes after them.
 
 Example 1 (vimrc)::
     "        _                    
@@ -41,9 +44,9 @@ They must:
 1. Span exactly 3 lines in height.
 2. Span exactly 80 columns in width.
 3. Use the following examples' "boxed-in" style.
-4. Have 2 empty lines preceding them.
-5. Have no empty line following them, 
-   unless the following element must have empty lines preceding it.
+4. Have 2 empty lines above them.
+5. Have no empty line below them, 
+   unless the next element must have empty lines above it.
 
 Example 1 (vimrc)::
 
@@ -68,11 +71,11 @@ multiple subsections; normal, insert, and visual.
 They must:
 
 1. Span exactly 3 lines in height.
-2. Span exactly 50 lines in width.
+2. Span exactly 50 columns in width.
 3. Use the following examples' "boxed-in" style.
-4. Have 1 empty line preceding them.
-5. Have no empty line following them, 
-   unless the following element must have empty lines preceding it.
+4. Have 1 empty line above them.
+5. Have no empty line below them, 
+   unless the following element must have empty lines above it.
 
 Example 1 (vimrc)::
 
@@ -84,8 +87,8 @@ Example 1 (vimrc)::
 -----------------
 Bash functions must:
 1. Use the `function` keyword
-2. Have 1 empty lines preceding them.
-3. Have no empty line following them, 
+2. Have 1 empty lines above them.
+3. Have no empty line below them.
 4. Include a comment block above them, properly documenting its purpose, 
    usage and globals/arguments/return values (if applies).
 
@@ -129,7 +132,7 @@ This comment block must:
 1. Have an empty comment line at the top and the bottom.
 2. Declare, in order, Globals, Arguments, and Returns
 3. Each of these declarations must have one empty line 
-   preceding and following them.
+   above and below them.
 4. Each of these declarations must be indented by two spaces.
 5. If one of these declarations is empty, just list "None".
 
@@ -156,3 +159,8 @@ Example::
     function tsplit() {
     }
 
+4) Stray comments
+-----------------
+Any stray comments that aren't from any of the above elements must:
+1. Always have exactly one empty line above it
+2. Have no empty line before the line(s) it's commenting

@@ -35,8 +35,7 @@ fi
 # +----------------------------------------------------------------------------+
 
 # Xclip copy/paste
-# usage: echo foo | setclip
-#        echo `getclip`
+# usage: echo foo | setclip ...... echo `getclip`
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o";
 

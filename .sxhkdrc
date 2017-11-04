@@ -1,28 +1,14 @@
-#                                                   
-#                 █      █          █               
-#    ▄▄▄   ▄   ▄  █ ▄▄   █   ▄   ▄▄▄█   ▄ ▄▄   ▄▄▄  
-#   █   ▀   █▄█   █▀  █  █ ▄▀   █▀ ▀█   █▀  ▀ █▀  ▀ 
-#    ▀▀▀▄   ▄█▄   █   █  █▀█    █   █   █     █     
-#   ▀▄▄▄▀  ▄▀ ▀▄  █   █  █  ▀▄  ▀█▄██   █     ▀█▄▄▀ 
-#                                                   
-#                                                   
+#           _     _       _          
+#  _____  _| |__ | | ____| |_ __ ___ 
+# / __\ \/ / '_ \| |/ / _` | '__/ __|
+# \__ \>  <| | | |   < (_| | | | (__ 
+# |___/_/\_\_| |_|_|\_\__,_|_|  \___|
+#                                    
+
 
 # sxhkd hotkeys
-
 super + e
  thunar
 
-super + o
- thunar
-
-super + i
- thunar
-
-super + t
- thunar
-
-super + y
- ristretto
-
-ctrl + alt + t
- xfce4-terminal --hide-menubar --hide-scrollbar
+#ctrl + alt + t
+ #xfce4-terminal --hide-menubar --hide-scrollbar

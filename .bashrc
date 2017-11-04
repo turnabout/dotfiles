@@ -42,26 +42,11 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 
 # +----------------------------------------------------------------------------+
 # | Load split bashrc files                                                    |
 # +----------------------------------------------------------------------------+
+
 # Aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -88,21 +73,9 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# Environment variables
-VIMRUNTIME="/usr/share/vim/vim74"
-
 # Add to PATH
-export PATH=$PATH:/sbin:~/bin
+export PATH=$PATH:/sbin:$HOME/bin
 
 # Host name & port
 export HOST="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
 export PORT="8080"
-
-# Load nvm
-export NVM_DIR="/home/k_pageau/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# Load xbindkeys
-if command_exists xbindkeys; then
-    xbindkeys
-fi
