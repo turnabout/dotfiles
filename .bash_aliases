@@ -40,7 +40,7 @@ alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o";
 
 alias python=python3.5
-alias v="nvim"
+alias v="vim"
 alias def="/usr/bin/sdcv"
 
 

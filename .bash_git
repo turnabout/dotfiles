@@ -52,47 +52,36 @@ function gl() {
 # +----------------------------------------------------------------------------+
 # | Git branch in prompt                                                       |
 # +----------------------------------------------------------------------------+
-
-# Colors
-red="\033[0;31m"
-white="\033[0;37m"
-green="\033[0;32m"
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=
 
 # Brackets needed around non-printable characters in PS1
-ps1_red='\['"$red"'\]'
-ps1_green='\['"$green"'\]'
-ps1_white='\['"$white"'\]'
+ps1_red='\[\033[0;31m\]'
+ps1_green='\[\033[0;32m\]'
+ps1_white='\[\033[0;37m\]'
 
-# Print the branch name and status to be displayed in the command line prompt
-function parse_git_branch() {
-    gitstatus=`git status 2> /dev/null`
-    if [[ `echo $gitstatus | grep "Changes to be committed"` != "" ]]
+PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]' # set window title
+PS1="$PS1"'\n'                 # new line
+PS1="$PS1"$ps1_red             # change color
+PS1="$PS1"'\u:'                # user
+PS1="$PS1"$ps1_white           # change color
+PS1="$PS1"'\W'                 # current directory
+
+if test -z "$WINELOADERNOEXEC"
+then
+    GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
+    COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
+    COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
+    COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
+    if test -f "$COMPLETION_PATH/git-prompt.sh"
     then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1***)/'
-    elif [[ `echo $gitstatus | grep "Changes not staged for commit"` != "" ]]
-    then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1**)/'
-    elif [[ `echo $gitstatus | grep "Untracked"` != "" ]]
-    then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1*)/'
-    elif [[ `echo $gitstatus | grep "nothing to commit"` != "" ]]
-    then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-    else
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1?)/'
+        . "$COMPLETION_PATH/git-completion.bash"
+        . "$COMPLETION_PATH/git-prompt.sh"
+        PS1="$PS1"$ps1_green  # change color
+        PS1="$PS1"'`__git_ps1 "(%s)"`'   # bash function
     fi
-}
+fi
 
-# Echo a non-printing color character depending on whether or not the current git branch is the master    
-# Does NOT print the branch name                                                                          
-# Use the parse_git_branch() function for that.                                                           
-function parse_git_branch_color() {
-    br=$(parse_git_branch)
-    if [[ $br == "(master)" || $br == "(master*)" || $br == "(master**)" || $br == "(master***)" ]]; then
-        echo -e "${red}"
-    else
-        echo -e "${green}"
-    fi
-}
-
-export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "
+PS1="$PS1"'\[\033[0m\]' # change color
+PS1="$PS1"' $ '         # prompt: $
+MSYS2_PS1="$PS1"        # for detection by MSYS2 SDK's bash.basrc
