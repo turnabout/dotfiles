@@ -16,7 +16,7 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-EDITOR="nvim"; export EDITOR
+EDITOR="vim"; export EDITOR
 
 # Append to the history file, don't overwrite it
 shopt -s histappend
@@ -76,7 +76,9 @@ fi
 # Add to PATH
 # export PATH=$PATH:/sbin:$HOME/bin
 
+# Global variables
 export HOST="127.0.0.1"
 export PORT="8080"
 
-cd ~/.dotfiles
+# Cd into home directory
+cd ~
