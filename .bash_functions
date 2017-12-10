@@ -35,26 +35,6 @@ function command_exists () {
 # +----------------------------------------------------------------------------+
 # | Quick go-to/open                                                           |
 # +----------------------------------------------------------------------------+
-projdir="/home/${USER}/projects"
-dotfilesdir="/home/${USER}/.dotfiles"
-
-# Go to current project directory
-function curpr() {
-    cd "${projdir}"
-}
-
-# Go to dotfiles directory
-function dotfiles() {
-    cd ${dotfilesdir}
-}
-
-# Sync dotfiles with remote
-function syncdot() {
-    cwd=$(pwd)
-    cd ${dotfilesdir}
-    git pull origin master
-    cd ${cwd}
-}
 
 # Open vimrc in vim
 function vrc() {
