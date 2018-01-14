@@ -176,3 +176,28 @@ function tsplit() {
         tmux attach -t ${winName}
     fi
 }
+
+# Symlink function for Windows.
+# Ensure git bash is ran as administrator when using.
+function winsym() {
+    # Format paths for Windows
+
+    # Replace slashes by backslashes
+    from=${1//\//\\}
+    to=${2//\//\\}
+
+    # Remove leading backslash
+    from=${from:1}
+    to=${to:1}
+
+    # Replace c\ with c:\
+    from=${from//c\\/c:\\}
+    to=${to//c\\/c:\\}
+
+    # Call Windows cmd
+    if [[ -d "$1" ]]; then
+  	    cmd <<< "mklink /D \"$to\" \"$from\""
+    else
+  	    cmd <<< "mklink \"$to\" \"$from\""
+    fi
+}
