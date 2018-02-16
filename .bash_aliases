@@ -37,6 +37,8 @@ fi
 alias cs="cd /d/cs && clear && ls"
 alias web="cd /f/web && clear && ls"
 alias dotfiles="cd ~/.dotfiles"
+alias schemetranscripts="cd /c/Users/kevin/AppData/Local/VirtualStore/Program\ Files/STk/MS-Win32"
+alias sicp="cd /d/sicp"
 
 # +----------------------------------------------------------------------------+
 # | Program shortcuts                                                          |
