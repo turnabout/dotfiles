@@ -132,7 +132,7 @@ function unfucksda1() {
 
 # Open C book
 function cb() {
-    evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
+    evince /media/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf &
 }
 
 # Reload sxhkd configuration file

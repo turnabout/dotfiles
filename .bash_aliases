@@ -42,7 +42,9 @@ alias getclip="xclip -selection c -o";
 alias python=python3.5
 alias v="nvim"
 alias def="/usr/bin/sdcv"
-
+alias killvlc="kill -9 `pgrep vlc`"
+alias monod="flatpak run com.xamarin.MonoDevelop &"
+alias sicp="cd /media/data/sicp"
 
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
