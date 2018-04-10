@@ -66,6 +66,23 @@ vmap <Tab> >
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Tab navigation
+nnoremap <C-q>     :tabprevious<CR>
+nnoremap <C-w>     :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-s>     :tabclose<CR>
+nnoremap <C-g>     :tabmove -1<CR>
+nnoremap <C-h>     :tabmove +1<CR>
+nnoremap <C-p>     :tabedit 
+
+inoremap <C-q>     <Esc>:tabprevious<CR>i
+inoremap <C-w>     <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+inoremap <C-s>     <Esc>:tabclose<CR>
+inoremap <C-g>     <Esc>:tabmove -1<CR>
+inoremap <C-h>     <Esc>:tabmove +1<CR>
+inoremap <C-p>     <Esc>:tabedit 
+
 
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
