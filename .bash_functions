@@ -31,6 +31,18 @@ function command_exists () {
     type "$1" &> /dev/null ;
 }
 
+# Continually output tree, ignoring files ignored by git.
+# Has to be run from the root of the git repo
+function gtree {
+    git_ignore_files=$(< .gitignore)
+    ignore_pattern=$(echo $git_ignore_files | tr ' ' '|')
+
+    if git status &> /dev/null && [[ -n "${ignore_pattern}" ]]; then
+      watch -ct -n 0.5 "tree -C -I '${ignore_pattern}'"
+    else 
+      tree "${@}"
+    fi
+}
 
 # +----------------------------------------------------------------------------+
 # | Quick go-to/open                                                           |
@@ -135,7 +147,6 @@ function sxhkdre() {
     pkill -USR1 -x sxhkd
     echo "sxhkd Config Reloaded"
 }
-
 
 # +----------------------------------------------------------------------------+
 # | Internal functions                                                         |
