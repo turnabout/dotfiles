@@ -66,22 +66,26 @@ vmap <Tab> >
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" +----------------------------------------------+
+" |  Other mappings                              |
+" +----------------------------------------------+
 " Tab navigation
-nnoremap <C-q>     :tabprevious<CR>
-nnoremap <C-w>     :tabnext<CR>
+nnoremap <C-j>     :tabprevious<CR>
+nnoremap <C-k>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <C-s>     :tabclose<CR>
 nnoremap <C-g>     :tabmove -1<CR>
 nnoremap <C-h>     :tabmove +1<CR>
-nnoremap <C-p>     :tabedit 
 
-inoremap <C-q>     <Esc>:tabprevious<CR>i
-inoremap <C-w>     <Esc>:tabnext<CR>i
+inoremap <C-j>     <Esc>:tabprevious<CR>i
+inoremap <C-k>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-s>     <Esc>:tabclose<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
 inoremap <C-h>     <Esc>:tabmove +1<CR>
-inoremap <C-p>     <Esc>:tabedit 
+
+" FZF
+nnoremap <C-p> :call fzf#run({'sink': 'tabedit', 'source': 'fd -t f'})<CR>
 
 
 " +----------------------------------------------------------------------------+
@@ -104,6 +108,7 @@ set expandtab              " Use spaces when inserting <Tab>
 set tabstop=4              " Number of spaces a <Tab> counts for
 set softtabstop=4          " Number of spaces a <Tab> counts for while editing
 set shiftwidth=4           " Number of spaces an entered <Tab> will translate to
+set rtp+=~/.fzf            " Use fzf
 
 set backspace=indent,eol,start " Allow backspace over all in insert mode
 

@@ -5,3 +5,5 @@ git clone https://github.com/xolox/vim-notes.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone https://github.com/unblevable/quick-scope.git
 git clone https://github.com/ervandew/supertab.git
+git clone https://github.com/junegunn/fzf.vim.git
+git clone https://github.com/airblade/vim-rooter.git
