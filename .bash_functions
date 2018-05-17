@@ -130,11 +130,6 @@ function unfucksda1() {
     sudo mount -o remount,rw /dev/sda1 /media/kevin/data
 }
 
-# Open C book
-function cb() {
-    evince /media/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf &
-}
-
 # Reload sxhkd configuration file
 function sxhkdre() {
     pkill -USR1 -x sxhkd

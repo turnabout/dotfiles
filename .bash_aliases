@@ -45,6 +45,8 @@ alias def="/usr/bin/sdcv"
 alias killvlc="kill -9 `pgrep vlc`"
 alias monod="flatpak run com.xamarin.MonoDevelop &"
 alias sicp="cd /media/data/sicp"
+alias cb="evince /media/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf &"
+
 
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |

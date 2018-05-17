@@ -13,3 +13,5 @@
 	editor = nvim
 [credential]
 	helper = cache --timeout=86400
+[alias]
+    ls-files-root = ! git ls-files
