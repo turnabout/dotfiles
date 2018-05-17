@@ -13,12 +13,12 @@ let g:pathogen_disabled = []
 let extension = expand('%:e')
 
 " Disable supertab in html files
-if (extension=='html')
+if (extension=='html' || extension=='css')
     call add(g:pathogen_disabled, 'supertab')
 endif
 
 " Disable emmet in non-html files
-if (extension!='html')
+if (extension!='html' && extension != 'css')
     call add(g:pathogen_disabled, 'emmet-vim')
 endif
 
