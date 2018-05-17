@@ -9,6 +9,19 @@
 " +----------------------------------------------------------------------------+
 " | Plugins                                                                    |
 " +----------------------------------------------------------------------------+
+let g:pathogen_disabled = []
+let extension = expand('%:e')
+
+" Disable supertab in html files
+if (extension=='html')
+    call add(g:pathogen_disabled, 'supertab')
+endif
+
+" Disable emmet in non-html files
+if (extension!='html')
+    call add(g:pathogen_disabled, 'emmet-vim')
+endif
+
 execute pathogen#infect()
 
 " +----------------------------------------------+
@@ -206,3 +219,9 @@ endif
 " +----------------------------------------------------------------------------+
 " Recognize custom file extensions as shell scripts
 autocmd BufRead,BufNewFile .bash_* set filetype=sh
+
+" Use tab key to expand emmet abbreviation
+let g:user_emmet_expandabbr_key='<Tab>'
+
+" Use emmet intelligent expand
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
