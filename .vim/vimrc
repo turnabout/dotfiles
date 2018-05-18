@@ -48,6 +48,12 @@ let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " +----------------------------------------------+
+" |  FZF                                         |
+" +----------------------------------------------+
+" Call FZF with C-p, source using fd
+nnoremap <C-p> :call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git'})<CR>
+
+" +----------------------------------------------+
 " |  NERDTree                                    |
 " +----------------------------------------------+
 " Mapping to toggle NERDTree
@@ -90,20 +96,6 @@ map <C-_> <leader>ci
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-" Use leader to work splits
-map <leader>h :winc h<CR>
-map <leader>j :winc j<CR>
-map <leader>k :winc k<CR>
-map <leader>l :winc l<CR>
-map <leader>s :winc s<CR>
-map <leader>v :winc v<CR>
-map <leader>H :winc H<CR>
-map <leader>J :winc J<CR>
-map <leader>K :winc K<CR>
-map <leader>L :winc L<CR>
-map <leader>S :winc S<CR>
-map <leader>V :winc V<CR>
-
 " +----------------------------------------------+
 " |  Insert                                      |
 " +----------------------------------------------+
@@ -134,6 +126,7 @@ inoremap <C-w>     <Esc>:bn<CR>i
 inoremap <C-s>     <Esc>:bd<CR>
 
 nnoremap gb :buffers<CR>:buffer<Space>
+nnoremap <C-b> :BufOnly<CR>
 
 " Tab navigation
 nnoremap <C-t>     :tabnew<CR>
@@ -144,8 +137,19 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
 inoremap <C-h>     <Esc>:tabmove +1<CR>
 
-" FZF
-nnoremap <C-p> :call fzf#run({'sink': 'e', 'source': 'fd -t f'})<CR>
+" Use leader to work splits
+map <leader>h :winc h<CR>
+map <leader>j :winc j<CR>
+map <leader>k :winc k<CR>
+map <leader>l :winc l<CR>
+map <leader>s :winc s<CR>
+map <leader>v :winc v<CR>
+map <leader>H :winc H<CR>
+map <leader>J :winc J<CR>
+map <leader>K :winc K<CR>
+map <leader>L :winc L<CR>
+map <leader>S :winc S<CR>
+map <leader>V :winc V<CR>
 
 
 " +----------------------------------------------------------------------------+
@@ -169,6 +173,7 @@ set tabstop=4              " Number of spaces a <Tab> counts for
 set softtabstop=4          " Number of spaces a <Tab> counts for while editing
 set shiftwidth=4           " Number of spaces an entered <Tab> will translate to
 set rtp+=~/.fzf            " Use fzf
+set hidden                 " Enable to move between buffers without saving
 
 set backspace=indent,eol,start " Allow backspace over all in insert mode
 
