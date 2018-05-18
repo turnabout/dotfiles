@@ -47,6 +47,25 @@ let g:user_emmet_expandabbr_key='<Tab>'
 " Use emmet intelligent expand
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+" +----------------------------------------------+
+" |  NERDTree                                    |
+" +----------------------------------------------+
+" Mapping to toggle NERDTree
+map <C-n> :MBEOpen<CR>:NERDTreeToggle<CR>:winc l<CR>
+
+" NERDtree git symbols
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "+",
+    \ "Staged"    : "S",
+    \ "Untracked" : "U",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "x",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "~",
+    \ "Clean"     : "C",
+    \ 'Ignored'   : 'I',
+    \ "Unknown"   : "?"
+    \ }
 
 " +----------------------------------------------------------------------------+
 " | Mappings                                                                   |
@@ -105,23 +124,28 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " +----------------------------------------------+
 " |  Other mappings                              |
 " +----------------------------------------------+
+" Buffer navigation
+nnoremap <C-q>     :bp<CR>
+nnoremap <C-w>     :bn<CR>
+nnoremap <C-s>     :bd<CR>
+
+inoremap <C-q>     <Esc>:bp<CR>i
+inoremap <C-w>     <Esc>:bn<CR>i
+inoremap <C-s>     <Esc>:bd<CR>
+
+nnoremap gb :buffers<CR>:buffer<Space>
+
 " Tab navigation
-nnoremap <C-q>     :tabprevious<CR>
-nnoremap <C-w>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-s>     :tabclose<CR>
 nnoremap <C-g>     :tabmove -1<CR>
 nnoremap <C-h>     :tabmove +1<CR>
 
-inoremap <C-q>     <Esc>:tabprevious<CR>i
-inoremap <C-w>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-inoremap <C-s>     <Esc>:tabclose<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
 inoremap <C-h>     <Esc>:tabmove +1<CR>
 
 " FZF
-nnoremap <C-p> :call fzf#run({'sink': 'tabedit', 'source': 'fd -t f'})<CR>
+nnoremap <C-p> :call fzf#run({'sink': 'e', 'source': 'fd -t f'})<CR>
 
 
 " +----------------------------------------------------------------------------+
