@@ -76,6 +76,14 @@ map <leader>h :winc h<CR>
 map <leader>j :winc j<CR>
 map <leader>k :winc k<CR>
 map <leader>l :winc l<CR>
+map <leader>s :winc s<CR>
+map <leader>v :winc v<CR>
+map <leader>H :winc H<CR>
+map <leader>J :winc J<CR>
+map <leader>K :winc K<CR>
+map <leader>L :winc L<CR>
+map <leader>S :winc S<CR>
+map <leader>V :winc V<CR>
 
 " +----------------------------------------------+
 " |  Insert                                      |
