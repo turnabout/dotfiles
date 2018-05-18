@@ -37,6 +37,11 @@ map <leader>sn :SearchNotes
 " +----------------------------------------------+
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"
+" +----------------------------------------------+
+" |  Fugitive                                    |
+" +----------------------------------------------+
+map <Leader>gb :Gblame<CR>
 
 " +----------------------------------------------+
 " |  Emmet                                       |
