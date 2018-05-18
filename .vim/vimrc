@@ -59,6 +59,13 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 nnoremap <C-p> :call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git'})<CR>
 
 " +----------------------------------------------+
+" |  gitgutter                                   |
+" +----------------------------------------------+
+nmap <leader>gs <Plug>GitGutterStageHunk
+nmap <leader>gu <Plug>GitGutterUndoHunk
+nmap <leader>gp <Plug>GitGutterPreviewHunk
+
+" +----------------------------------------------+
 " |  NERDTree                                    |
 " +----------------------------------------------+
 " Mapping to toggle NERDTree
