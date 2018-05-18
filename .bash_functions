@@ -38,9 +38,9 @@ function gtree {
     ignore_pattern=$(echo $git_ignore_files | tr ' ' '|')
 
     if git status &> /dev/null && [[ -n "${ignore_pattern}" ]]; then
-      watch -ct -n 0.5 "tree -C -I '${ignore_pattern}'"
+      watch -ct -n 0.5 "tree --dirsfirst -C -I '${ignore_pattern}'"
     else 
-      tree "${@}"
+      tree --dirsfirst -C
     fi
 }
 
