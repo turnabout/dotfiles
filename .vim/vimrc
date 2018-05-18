@@ -38,6 +38,15 @@ map <leader>sn :SearchNotes
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" +----------------------------------------------+
+" |  Emmet                                       |
+" +----------------------------------------------+
+" Use tab key to expand emmet abbreviation
+let g:user_emmet_expandabbr_key='<Tab>'
+
+" Use emmet intelligent expand
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
 
 " +----------------------------------------------------------------------------+
 " | Mappings                                                                   |
@@ -62,6 +71,12 @@ map <C-_> <leader>ci
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
+" Use leader to work splits
+map <leader>h :winc h<CR>
+map <leader>j :winc j<CR>
+map <leader>k :winc k<CR>
+map <leader>l :winc l<CR>
+
 " +----------------------------------------------+
 " |  Insert                                      |
 " +----------------------------------------------+
@@ -83,15 +98,15 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " |  Other mappings                              |
 " +----------------------------------------------+
 " Tab navigation
-nnoremap <C-j>     :tabprevious<CR>
-nnoremap <C-k>     :tabnext<CR>
+nnoremap <C-q>     :tabprevious<CR>
+nnoremap <C-w>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <C-s>     :tabclose<CR>
 nnoremap <C-g>     :tabmove -1<CR>
 nnoremap <C-h>     :tabmove +1<CR>
 
-inoremap <C-j>     <Esc>:tabprevious<CR>i
-inoremap <C-k>     <Esc>:tabnext<CR>i
+inoremap <C-q>     <Esc>:tabprevious<CR>i
+inoremap <C-w>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-s>     <Esc>:tabclose<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
@@ -219,9 +234,3 @@ endif
 " +----------------------------------------------------------------------------+
 " Recognize custom file extensions as shell scripts
 autocmd BufRead,BufNewFile .bash_* set filetype=sh
-
-" Use tab key to expand emmet abbreviation
-let g:user_emmet_expandabbr_key='<Tab>'
-
-" Use emmet intelligent expand
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
