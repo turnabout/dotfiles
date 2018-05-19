@@ -31,6 +31,16 @@ function command_exists () {
     type "$1" &> /dev/null ;
 }
 
+# Mount USB device
+function mountusb() {
+    sudo mount /dev/$1 /media/usb
+}
+
+# Unmount USB device
+function umountusb() {
+    sudo umount /media/usb
+}
+
 # Continually output tree, ignoring files ignored by git.
 # Has to be run from the root of the git repo
 function gtree {
