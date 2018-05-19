@@ -71,6 +71,9 @@ nmap <leader>gp <Plug>GitGutterPreviewHunk
 " Mapping to toggle NERDTree
 map <C-n> :MBEOpen<CR>:NERDTreeToggle<CR>:winc l<CR>
 
+" Find current file in tree
+map <leader>f :NERDTreeFind<CR>
+
 " NERDtree git symbols
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "+",
