@@ -49,6 +49,12 @@ map <Leader>gb :Gblame<CR>
 " Use emmet intelligent expand
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+" Only use emmet in insert mode
+let g:user_emmet_mode='i'
+
+" Remap emmet leader key
+let g:user_emmet_leader_key='<leader>='
+
 " +----------------------------------------------+
 " |  FZF                                         |
 " +----------------------------------------------+
@@ -100,9 +106,6 @@ map Q gq
 
 " EOL Semicolon
 noremap <C-m> A;<Esc>
-
-" Toggle comment
-map <C-_> <leader>ci
 
 " Move current line up/down
 nnoremap <C-j> :m .+1<CR>==
