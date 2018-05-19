@@ -46,9 +46,6 @@ map <Leader>gb :Gblame<CR>
 " +----------------------------------------------+
 " |  Emmet                                       |
 " +----------------------------------------------+
-" Use tab key to expand emmet abbreviation
-let g:user_emmet_expandabbr_key='<Tab>'
-
 " Use emmet intelligent expand
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
