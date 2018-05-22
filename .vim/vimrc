@@ -58,8 +58,17 @@ let g:user_emmet_leader_key='<leader>='
 " +----------------------------------------------+
 " |  FZF                                         |
 " +----------------------------------------------+
-" Call FZF with C-p, source using fd
-nnoremap <C-p> :call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git'})<CR>
+" Function to prevent FZF from taking up NERDtree's split
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    :winc l
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
+
+" Call FZF on files/buffers with C-p/C-l
+nnoremap <silent> <C-l> :call FZFOpen(':Buffers')<CR>
+nnoremap <silent> <C-p> :call FZFOpen(":call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git', 'down': '30%'})")<CR>
 
 " +----------------------------------------------+
 " |  gitgutter                                   |
