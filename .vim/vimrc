@@ -153,6 +153,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap J     :bp<CR>
 nnoremap K     :bn<CR>
 nnoremap <C-w> :BD<CR>
+nnoremap g$    :blast<CR>
+nnoremap g0    :bfirst<CR>
 
 inoremap <C-w> <Esc>:BD<CR>
 
