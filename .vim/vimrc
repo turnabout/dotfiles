@@ -143,11 +143,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Buffer navigation
 nnoremap <C-q>     :bp<CR>
 nnoremap <C-w>     :bn<CR>
-nnoremap <C-s>     :BD<CR>
+nnoremap <C-x>     :BD<CR>
 
 inoremap <C-q>     <Esc>:bp<CR>i
 inoremap <C-w>     <Esc>:bn<CR>i
-inoremap <C-s>     <Esc>:BD<CR>i
+inoremap <C-x>     <Esc>:BD<CR>i
 
 nnoremap gb :buffers<CR>:buffer<Space>
 nnoremap <C-b> :BufOnly<CR>
