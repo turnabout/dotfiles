@@ -123,8 +123,11 @@ map Q gq
 noremap <C-m> A;<Esc>
 
 " Move current line up/down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+
+" Join lines
+nnoremap <C-j> :join<CR>
 
 " +----------------------------------------------+
 " |  Insert                                      |
@@ -147,13 +150,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " |  Other mappings                              |
 " +----------------------------------------------+
 " Buffer navigation
-nnoremap <C-q>     :bp<CR>
-nnoremap <C-w>     :bn<CR>
-nnoremap <C-x>     :BD<CR>
+nnoremap J     :bp<CR>
+nnoremap K     :bn<CR>
+nnoremap <C-w> :BD<CR>
 
-inoremap <C-q>     <Esc>:bp<CR>i
-inoremap <C-w>     <Esc>:bn<CR>i
-inoremap <C-x>     <Esc>:BD<CR>i
+inoremap <C-w> <Esc>:BD<CR>
 
 nnoremap gb :buffers<CR>:buffer<Space>
 nnoremap <C-b> :BufOnly<CR>
