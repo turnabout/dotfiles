@@ -54,6 +54,17 @@ function gtree {
     fi
 }
 
+# Toggle between us/ca keyboard layouts
+function tlay() {
+    layout=`setxkbmap -query | grep layout | tail -c 3`
+
+    if [ $layout == "ca" ]; then
+        setxkbmap us
+    else
+        setxkbmap ca
+    fi
+}
+
 # +----------------------------------------------------------------------------+
 # | IDE-like utilities                                                         |
 # +----------------------------------------------------------------------------+
