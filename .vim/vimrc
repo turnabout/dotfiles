@@ -184,6 +184,10 @@ map <leader>L :winc L<CR>
 map <leader>S :winc S<CR>
 map <leader>V :winc V<CR>
 
+" Map CTRL-S to save
+noremap <silent> <C-S>  :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
 
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
