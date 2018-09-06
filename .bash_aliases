@@ -49,6 +49,7 @@ alias killvlc="kill -9 `pgrep vlc`"
 alias monod="flatpak run com.xamarin.MonoDevelop &"
 alias sicp="cd /media/data/sicp"
 alias cb="evince /media/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf &"
+alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of DVI-D-0"
 
 
 # +----------------------------------------------------------------------------+
