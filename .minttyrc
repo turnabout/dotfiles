@@ -1,39 +1,26 @@
-# .minttyrc (git bash)
-
-# Preferences
 BoldAsFont=-1
 Transparency=low
 CursorType=block
 Term=xterm-256color
 Columns=130
 Rows=40
-
-# Theme (jellybeans)
 BackgroundColour=29,29,29
 ForegroundColour=232,232,211
-
 CursorColour=173,173,173
-
 Black=82,82,82
 BoldBlack=59,59,59
-
-Red=255,257,128
+Red=255,1,128
 BoldRed=207,106,76
-
 Green=195,230,173
 BoldGreen=153,173,106
-
 Yellow=255,239,191
 BoldYellow=216,173,76
-
 Blue=172,202,255
 BoldBlue=89,123,197
-
 Magenta=196,196,255
 BoldMagenta=160,55,176
-
 Cyan=128,191,175
 BoldCyan=113,185,248
-
 White=232,232,211
 BoldWhite=173,173,173
+FontHeight=16

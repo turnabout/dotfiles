@@ -201,3 +201,25 @@ function winsym() {
   	    cmd <<< "mklink \"$to\" \"$from\""
     fi
 }
+
+# +----------------------------------------------------------------------------+
+# | AC RomHacking                                                              |
+# +----------------------------------------------------------------------------+
+function acpack() {
+    dolphin=/d/win_programs/dolphin/Dolphin.exe
+    dir=/i/gc/ac_hack
+    outputDir=/i/gc/roms/AC_HACKED.iso
+
+    # Pack forest_1st & forest_2nd
+    ${dir}/rarcpacker.exe ${dir}/forest_1st
+    mv ${dir}/forest_1st.arc ${dir}/root/forest_1st.arc
+
+    ${dir}/rarcpacker.exe ${dir}/forest_2nd
+    mv ${dir}/forest_2nd.arc ${dir}/root/forest_2nd.arc
+
+    # Rebuild into iso
+    ${dir}/gcr.exe ${dir}/root ${outputDir}
+
+    # Launch iso with dolphin
+    # ${dolphin} ${outputDir}
+}

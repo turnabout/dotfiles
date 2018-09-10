@@ -82,3 +82,9 @@ export PORT="8080"
 
 # Cd into home directory
 # cd ~
+
+# Fix global npm modules
+PATH=~/AppData/Roaming/npm:$PATH
+
+# Deployment scripts
+alias depl="npm run sass-prod && npm run js-prod"

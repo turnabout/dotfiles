@@ -1,2 +1,4 @@
 *.netrwhist
 *.swp
+.vim/view/
+.vim/view/*

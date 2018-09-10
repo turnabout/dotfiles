@@ -183,3 +183,16 @@ endif
 " +----------------------------------------------------------------------------+
 " Recognize custom file extensions as shell scripts
 autocmd BufRead,BufNewFile .bash_* set filetype=sh
+
+set visualbell
+set noerrorbells
+
+nmap J :tabp<CR>
+nmap K :tabn<CR>
+
+" Auto save folds on file open/exit
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
