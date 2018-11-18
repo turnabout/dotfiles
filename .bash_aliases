@@ -61,3 +61,6 @@ alias prod="ssh production"
 alias staging="ssh staging"
 alias solar="cd ~/Documents/code/travel/solar/"
 alias navicat="cd ~/Downloads/navicat112_mysql_en_x64 && ./start_navicat"
+
+# Open MSP430f5529 header file
+alias gomsp5529="v /c/ti/ccsv8/ccs_base/msp430/include/msp430f5529.h"
