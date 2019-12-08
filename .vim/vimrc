@@ -121,7 +121,7 @@ endfunction
 map <leader>gc :call C_compile_file()
 
 " Single line C comment
-imap <C-_> /**/jkhi<space><space>jki
+imap <C-l> /**/jkhi<space><space>jki
 
 " Multi line C comment
 imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>

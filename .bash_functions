@@ -177,6 +177,10 @@ function tsplit() {
     fi
 }
 
+function pk() {
+    taskkill //IM "$1" -F
+}
+
 # Symlink function for Windows.
 # Ensure git bash is ran as administrator when using.
 function winsym() {

@@ -86,5 +86,67 @@ export PORT="8080"
 # Fix global npm modules
 PATH=~/AppData/Roaming/npm:$PATH
 
-# Deployment scripts
+alias pserver="python -m SimpleHTTPServer 8000"
+
+# Quick aliases
 alias depl="npm run sass-prod && npm run js-prod"
+
+alias ogl="cd /f/OpenGL_Experiments/OpenGL_Experiments && clear"
+
+export SDL2DIR="F:\c\SDL2-2.0.10"
+export SDL2IMAGEDIR="F:\c\SDL2_image-2.0.5"
+export SDL2TTFDIR="F:\c\SDL2_ttf-2.0.15"
+
+# Qt4
+PATH=/c/Qt/4.8.5/bin:$PATH
+PATH=/c/glew/bin:$PATH
+PATH=/c/glew:$PATH
+PATH=/c/glew/lib:$PATH
+
+# MinGW binaries
+PATH=/c/MinGW/bin:$PATH
+PATH=/c/MinGW/include:$PATH
+PATH=/c/MinGW/lib:$PATH
+
+# Emscripten paths & env variables
+PATH=~/AppData/Roaming/npm:$PATH
+
+PATH=/f/web/emsdk:$PATH
+PATH=/f/web/emsdk/fastcomp/emscripten:$PATH
+# PATH=/f/web/emsdk/node/8.9.1_64bit/bin:$PATH
+PATH=/f/web/emsdk/python/2.7.13.1_64bit/python-2.7.13.amd64:$PATH
+PATH=/f/web/emsdk/java/8.152_64bit/bin:$PATH
+
+EMSDK=/f/web/emsdk
+EM_CONFIG=/c/Users/kevin/.emscripten
+EMSDK_NODE=/f/web/emsdk/node/8.9.1_64bit/bin/node.exe
+EMSDK_PYTHON=/f/web/emsdk/python/2.7.13.1_64bit/python-2.7.13.amd64/python.exe
+JAVA_HOME=/f/web/emsdk/java/8.152_64bit
+
+# C# compiler
+PATH=/c/Windows/Microsoft.NET/Framework64/v4.0.30319:$PATH
+
+# Compiling go archive for C
+PATH=/c/TDM-GCC-32/bin:$PATH
+export CGO_ENABLED=1 
+export GOOS=windows 
+export GOARCH=386
+
+# AWO
+# Make output path
+export AWO_GAME_OUTPUT="/f/AWO_web/src/assets/AWO.js"
+
+# Shortcuts
+alias todo="v ~/Desktop/todo"
+
+alias aw="cd /f/AWO/AWO && clear"
+alias aww="cd /f/AWO_web && clear"
+alias aws="cd /f/go/src/github.com/turnabout/awossgen && clear"
+
+alias awr="v /f/AWO/AWO/Resources/Data/game_data.json && clear"
+
+alias awb="cd /f/go/src/github.com/turnabout/awossgen && go run . && cd - && clear"
+
+alias sta="v /f/go/src/github.com/turnabout/awossgen/inputs/additional/stages.json"
+
+alias cb="cd /f/click_bot && clear"

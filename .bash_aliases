@@ -49,7 +49,7 @@ alias sicp="cd /d/sicp"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o";
 
-alias python=python3.5
+# alias python=python3.5
 alias v="vim"
 alias def="/usr/bin/sdcv"
 
