@@ -128,9 +128,10 @@ PATH=/c/Windows/Microsoft.NET/Framework64/v4.0.30319:$PATH
 
 # Compiling go archive for C
 PATH=/c/TDM-GCC-32/bin:$PATH
-export CGO_ENABLED=1 
-export GOOS=windows 
-export GOARCH=386
+# export CGO_ENABLED=1 
+# export GOOS=windows 
+# export GOARCH=386
+PATH=$GOPATH/bin/windows_386:$PATH
 
 # AWO
 # Make output path
@@ -139,9 +140,13 @@ export AWO_GAME_OUTPUT="/f/AWO_web/src/assets/AWO.js"
 # Shortcuts
 alias todo="v ~/Desktop/todo"
 
-alias aw="cd /f/AWO/AWO && clear"
+alias aw="cd /f/AWO && clear"
 alias aww="cd /f/AWO_web && clear"
-alias aws="cd /f/go/src/github.com/turnabout/awossgen && clear"
+alias aws="cd /f/go/src/github.com/turnabout/awodatagen && clear"
+
+alias awg="awodatagen.exe"
+alias awi="go install /f/go/src/github.com/turnabout/awodatagen/cmd/awodatagen"
+alias awig="go install /f/go/src/github.com/turnabout/awodatagen/cmd/awodatagen && awodatagen.exe"
 
 alias awr="v /f/AWO/AWO/Resources/Data/game_data.json && clear"
 
