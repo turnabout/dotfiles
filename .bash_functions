@@ -206,6 +206,11 @@ function winsym() {
     fi
 }
 
+# Open a tutorialspoint page for a C function
+function tutc() {
+    start chrome https://www.tutorialspoint.com/c_standard_library/c_function_${1}.htm
+}
+
 # +----------------------------------------------------------------------------+
 # | AC RomHacking                                                              |
 # +----------------------------------------------------------------------------+
