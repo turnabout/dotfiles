@@ -143,6 +143,8 @@ alias todo="v ~/Desktop/todo"
 alias aw="cd /f/AWO && clear"
 alias aww="cd /f/AWO_web && clear"
 alias aws="cd /f/go/src/github.com/turnabout/awodatagen && clear"
+alias awx="cd /f/AWO_experimental && clear"
+alias awse="cd /f/go/src/github.com/turnabout/server/ && clear"
 
 alias awg="awodatagen.exe"
 alias awi="go install /f/go/src/github.com/turnabout/awodatagen/cmd/awodatagen"
@@ -155,3 +157,8 @@ alias awb="cd /f/go/src/github.com/turnabout/awossgen && go run . && cd - && cle
 alias sta="v /f/go/src/github.com/turnabout/awossgen/inputs/additional/stages.json"
 
 alias cb="cd /f/click_bot && clear"
+
+# AWO Server public assets directory
+export AWO_PUBLIC_ASSETS="/f/go/src/github.com/turnabout/server/assets/public"
+
+alias air="air -c ~/.air.conf"

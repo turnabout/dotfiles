@@ -198,6 +198,9 @@ function winsym() {
     from=${from//c\\/c:\\}
     to=${to//c\\/c:\\}
 
+    from=${from//f\\/f:\\}
+    to=${to//f\\/f:\\}
+
     # Call Windows cmd
     if [[ -d "$1" ]]; then
   	    cmd <<< "mklink /D \"$to\" \"$from\""
