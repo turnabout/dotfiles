@@ -49,6 +49,10 @@ map <C-_> <leader>ci
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
+" Move to middle of current line
+map gm :call cursor(0, virtcol('$')/2)<CR>
+
+
 " +----------------------------------------------+
 " |  Insert                                      |
 " +----------------------------------------------+
@@ -176,7 +180,6 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-
 
 " +----------------------------------------------------------------------------+
 " | Other                                                                      |

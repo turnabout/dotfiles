@@ -73,9 +73,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# Add to PATH
-# export PATH=$PATH:/sbin:$HOME/bin
-
 # Global variables
 export HOST="127.0.0.1"
 export PORT="8080"
@@ -128,9 +125,6 @@ PATH=/c/Windows/Microsoft.NET/Framework64/v4.0.30319:$PATH
 
 # Compiling go archive for C
 PATH=/c/TDM-GCC-32/bin:$PATH
-# export CGO_ENABLED=1 
-# export GOOS=windows 
-# export GOARCH=386
 PATH=$GOPATH/bin/windows_386:$PATH
 
 # AWO
