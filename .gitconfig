@@ -7,9 +7,11 @@
 
 
 [user]
-	email = kevin.pageau@momentumtravel.com
+	email = pageau.kevin@gmail.com
 	name = Kevin Pageau
 [core]
 	editor = nvim
 [credential]
 	helper = cache --timeout=86400
+[alias]
+    ls-files-root = ! git ls-files

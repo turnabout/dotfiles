@@ -42,4 +42,4 @@ done
 
 # Create directories for neovim init file & symlink
 mkdir -p ~/.config/nvim
-ln $dir/.vim/nvimrc ~/.config/nvim/init.vim
+ln -s $dir/.vim/nvimrc ~/.config/nvim/init.vim

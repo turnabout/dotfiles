@@ -17,6 +17,7 @@ alias gd="git diff"
 alias gpr="git pull --rebase"
 alias fuckshitup="git branch --merged develop | grep -v master | grep -v develop | xargs --no-run-if-empty git branch -d"
 alias grh="git reset --hard"
+alias repofiles="git ls-files-root --cached --others --exclude-standard"
 
 
 # +----------------------------------------------------------------------------+

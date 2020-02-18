@@ -31,6 +31,47 @@ function command_exists () {
     type "$1" &> /dev/null ;
 }
 
+# Mount USB device
+function mountusb() {
+    sudo mount /dev/$1 /media/usb
+}
+
+# Unmount USB device
+function umountusb() {
+    sudo umount /media/usb
+}
+
+# Continually output tree, ignoring files ignored by git.
+# Has to be run from the root of the git repo
+function gtree {
+    git_ignore_files=$(< .gitignore)
+    ignore_pattern=$(echo $git_ignore_files | tr ' ' '|')
+
+    if git status &> /dev/null && [[ -n "${ignore_pattern}" ]]; then
+      watch -ct -n 0.5 "tree --dirsfirst -C -I '${ignore_pattern}'"
+    else 
+      tree --dirsfirst -C
+    fi
+}
+
+# Toggle between us/ca keyboard layouts
+function tlay() {
+    layout=`setxkbmap -query | grep layout | tail -c 3`
+
+    if [ $layout == "ca" ]; then
+        setxkbmap us
+    else
+        setxkbmap ca
+    fi
+}
+
+# +----------------------------------------------------------------------------+
+# | IDE-like utilities                                                         |
+# +----------------------------------------------------------------------------+
+# Search/replace $1 occurences by $2 in all files of directory & subdirectories
+function sr() {
+    grep -rli "$1" * | xargs -i@ sed -i "s/$1/$2/g" @
+}
 
 # +----------------------------------------------------------------------------+
 # | Quick go-to/open                                                           |
@@ -130,17 +171,11 @@ function unfucksda1() {
     sudo mount -o remount,rw /dev/sda1 /media/kevin/data
 }
 
-# Open C book
-function cb() {
-    evince /media/kevin/data/ebooks/The_C_Programming_Language_Ritchie_\&_Kernighan.pdf
-}
-
 # Reload sxhkd configuration file
 function sxhkdre() {
     pkill -USR1 -x sxhkd
     echo "sxhkd Config Reloaded"
 }
-
 
 # +----------------------------------------------------------------------------+
 # | Internal functions                                                         |

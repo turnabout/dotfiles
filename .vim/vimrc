@@ -9,6 +9,19 @@
 " +----------------------------------------------------------------------------+
 " | Plugins                                                                    |
 " +----------------------------------------------------------------------------+
+let g:pathogen_disabled = []
+let extension = expand('%:e')
+
+" Enable supertab only in C files/projects
+if (extension!='c')
+    call add(g:pathogen_disabled, 'supertab')
+endif
+
+" Disable emmet in C files/projects
+if (extension=='c')
+    call add(g:pathogen_disabled, 'emmet-vim')
+endif
+
 execute pathogen#infect()
 
 " +----------------------------------------------+
@@ -24,7 +37,74 @@ map <leader>sn :SearchNotes
 " +----------------------------------------------+
 " QuickScope: Trigger in the appropriate direction only when pressing keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"
+" +----------------------------------------------+
+" |  Fugitive                                    |
+" +----------------------------------------------+
+map <Leader>gb :Gblame<CR>
 
+" +----------------------------------------------+
+" |  Emmet                                       |
+" +----------------------------------------------+
+" Use emmet intelligent expand
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" Only use emmet in insert mode
+let g:user_emmet_mode='i'
+
+" Remap emmet leader key
+let g:user_emmet_leader_key='<leader>='
+
+" +----------------------------------------------+
+" |  FZF                                         |
+" +----------------------------------------------+
+" Function to prevent FZF from taking up NERDtree's split
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    :winc l
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
+
+" Call FZF on files/buffers with C-p/C-l
+nnoremap <silent> <C-l> :call FZFOpen(':Buffers')<CR>
+nnoremap <silent> <C-p> :call FZFOpen(":call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git', 'down': '30%'})")<CR>
+nnoremap <silent> <leader>gl :call FZFOpen(':BLines')<CR>
+
+" Search files contents
+map <C-f> :Find<space>
+
+command! -bang -nargs=* Find call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+" +----------------------------------------------+
+" |  gitgutter                                   |
+" +----------------------------------------------+
+nmap <leader>gs <Plug>GitGutterStageHunk
+nmap <leader>gu <Plug>GitGutterUndoHunk
+nmap <leader>gp <Plug>GitGutterPreviewHunk
+
+" +----------------------------------------------+
+" |  NERDTree                                    |
+" +----------------------------------------------+
+" Mapping to toggle NERDTree
+map <C-n> :MBEOpen<CR>:NERDTreeToggle<CR>:winc l<CR>
+
+" Find current file in tree
+map <leader>f :NERDTreeFind<CR>
+
+" NERDtree git symbols
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "+",
+    \ "Staged"    : "S",
+    \ "Untracked" : "U",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "x",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "~",
+    \ "Clean"     : "C",
+    \ 'Ignored'   : 'I',
+    \ "Unknown"   : "?"
+    \ }
 
 " +----------------------------------------------------------------------------+
 " | Mappings                                                                   |
@@ -42,12 +122,12 @@ map Q gq
 " EOL Semicolon
 noremap <C-m> A;<Esc>
 
-" Toggle comment
-map <C-_> <leader>ci
-
 " Move current line up/down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+
+" Join lines
+nnoremap <C-j> :join<CR>
 
 " +----------------------------------------------+
 " |  Insert                                      |
@@ -66,6 +146,48 @@ vmap <Tab> >
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" +----------------------------------------------+
+" |  Other mappings                              |
+" +----------------------------------------------+
+" Buffer navigation
+nnoremap J     :bp<CR>
+nnoremap K     :bn<CR>
+nnoremap <C-w> :BD<CR>
+nnoremap g$    :blast<CR>
+nnoremap g0    :bfirst<CR>
+
+inoremap <C-w> <Esc>:BD<CR>
+
+nnoremap gb :buffers<CR>:buffer<Space>
+nnoremap <C-b> :BufOnly<CR>
+
+" Tab navigation
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-g>     :tabmove -1<CR>
+nnoremap <C-h>     :tabmove +1<CR>
+
+inoremap <C-t>     <Esc>:tabnew<CR>
+inoremap <C-g>     <Esc>:tabmove -1<CR>
+inoremap <C-h>     <Esc>:tabmove +1<CR>
+
+" Use leader to work splits
+map <leader>h :winc h<CR>
+map <leader>j :winc j<CR>
+map <leader>k :winc k<CR>
+map <leader>l :winc l<CR>
+map <leader>s :winc s<CR>
+map <leader>v :winc v<CR>
+map <leader>H :winc H<CR>
+map <leader>J :winc J<CR>
+map <leader>K :winc K<CR>
+map <leader>L :winc L<CR>
+map <leader>S :winc S<CR>
+map <leader>V :winc V<CR>
+
+" Map CTRL-S to save
+noremap <silent> <C-S>  :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
 
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
@@ -87,6 +209,8 @@ set expandtab              " Use spaces when inserting <Tab>
 set tabstop=4              " Number of spaces a <Tab> counts for
 set softtabstop=4          " Number of spaces a <Tab> counts for while editing
 set shiftwidth=4           " Number of spaces an entered <Tab> will translate to
+set rtp+=~/.fzf            " Use fzf
+set hidden                 " Enable to move between buffers without saving
 
 set backspace=indent,eol,start " Allow backspace over all in insert mode
 
