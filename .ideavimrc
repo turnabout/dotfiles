@@ -34,10 +34,3 @@ nnoremap <C-k> :m .-2<CR>==
 e		
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
-
-
-
-" +----------------------------------------------------------------------------+
-" | Settings                                                                   |
-" +----------------------------------------------------------------------------+
-set scrolloff=3    " Keep cursor visible within 3 lines
