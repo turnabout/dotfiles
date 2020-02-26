@@ -16,18 +16,13 @@ function lastmod() {
 }
 
 # Make directory & move to it
-function mkcd () {
+function mkcd() {
     mkdir "$1"
     cd "$1"
 }
 
-# Dig with simple output
-function digbare() {
-    dig $1 +nostats +nocomments +nocmd
-}
-
 # Check if a command exists
-function command_exists () {
+function cmdexists () {
     type "$1" &> /dev/null ;
 }
 
@@ -39,19 +34,6 @@ function mountusb() {
 # Unmount USB device
 function umountusb() {
     sudo umount /media/usb
-}
-
-# Continually output tree, ignoring files ignored by git.
-# Has to be run from the root of the git repo
-function gtree {
-    git_ignore_files=$(< .gitignore)
-    ignore_pattern=$(echo $git_ignore_files | tr ' ' '|')
-
-    if git status &> /dev/null && [[ -n "${ignore_pattern}" ]]; then
-      watch -ct -n 0.5 "tree --dirsfirst -C -I '${ignore_pattern}'"
-    else 
-      tree --dirsfirst -C
-    fi
 }
 
 # Toggle between us/ca keyboard layouts
@@ -76,13 +58,7 @@ function sr() {
 # +----------------------------------------------------------------------------+
 # | Quick go-to/open                                                           |
 # +----------------------------------------------------------------------------+
-projdir="/home/${USER}/projects"
 dotfilesdir="/home/${USER}/.dotfiles"
-
-# Go to current project directory
-function curpr() {
-    cd "${projdir}"
-}
 
 # Go to dotfiles directory
 function dotfiles() {
