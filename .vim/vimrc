@@ -71,11 +71,6 @@ nnoremap <silent> <C-l> :call FZFOpen(':Buffers')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(":call fzf#run({'sink': 'e', 'source': 'fd -H -t f -E .git', 'down': '30%'})")<CR>
 nnoremap <silent> <leader>gl :call FZFOpen(':BLines')<CR>
 
-" Search files contents
-map <C-f> :Find<space>
-
-command! -bang -nargs=* Find call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
 " +----------------------------------------------+
 " |  gitgutter                                   |
 " +----------------------------------------------+
