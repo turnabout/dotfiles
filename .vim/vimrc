@@ -46,9 +46,6 @@ map <Leader>gb :Gblame<CR>
 " +----------------------------------------------+
 " |  Emmet                                       |
 " +----------------------------------------------+
-" Use emmet intelligent expand
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
 " Only use emmet in insert mode
 let g:user_emmet_mode='i'
 
