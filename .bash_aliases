@@ -50,4 +50,9 @@ alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of
 # +----------------------------------------------------------------------------+
 alias prod="ssh production"
 alias staging="ssh staging"
-alias phpstorm='/usr/local/PhpStorm/bin/phpstorm.sh'
+alias phpstorm="/usr/local/PhpStorm/bin/phpstorm.sh &"
+
+alias werk="cd /media/werk/flighthub"
+alias r="cd /media/werk/flighthub/travel/ota-react"
+alias d="cd /media/werk/flighthub/travel/docroots"
+alias s="cd /media/werk/flighthub/travel/solar"
