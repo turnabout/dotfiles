@@ -44,6 +44,10 @@ alias killvlc="kill -9 `pgrep vlc`"
 alias sicp="cd /media/data/sicp"
 alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of DVI-D-0"
 
+# Fix partitions (home)
+alias fixwerk="sudo umount --force  /media/werk && sudo ntfsfix /dev/sdc2 && sudo mount -o rw /media/werk"
+alias fixdata="sudo umount --force  /media/data && sudo ntfsfix /dev/sda1 && sudo mount -o rw /media/data"
+
 
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
