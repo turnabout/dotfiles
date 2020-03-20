@@ -60,3 +60,5 @@ alias werk="cd ~/werk/"
 alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
 alias s="cd ~/werk/flighthub/travel/solar"
+
+alias stage="ssh -i werk/flighthub/ssh/staging-key -p 4001 web1@192.168.20.172"
