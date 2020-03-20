@@ -52,8 +52,6 @@ alias fixdata="sudo umount --force  /media/data && sudo ntfsfix /dev/sda1 && sud
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias prod="ssh production"
-alias staging="ssh staging"
 alias phpstorm="/usr/local/PhpStorm/bin/phpstorm.sh &"
 
 alias werk="cd ~/werk/"
@@ -61,8 +59,6 @@ alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
 alias s="cd ~/werk/flighthub/travel/solar"
 
-alias stage="ssh -i ~/werk/flighthub/ssh/staging-key -p 4001 web1@192.168.20.172"
-alias prod="ssh -i ~/werk/flighthub/ssh/staging-key -p 5001 web1@192.168.20.172"
-
 alias va="cd ~/werk/flighthub/vagrant"
-alias vup="cd ~/werk/flighthub/vagrant && vagrant up"
+alias vssh="va && vagrant ssh"
+alias vup="va && vagrant up"
