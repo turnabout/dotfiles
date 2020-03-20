@@ -61,4 +61,7 @@ alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
 alias s="cd ~/werk/flighthub/travel/solar"
 
-alias stage="ssh -i werk/flighthub/ssh/staging-key -p 4001 web1@192.168.20.172"
+alias stage="ssh -i ~/werk/flighthub/ssh/staging-key -p 4001 web1@192.168.20.172"
+alias prod="ssh -i ~/werk/flighthub/ssh/staging-key -p 5001 web1@192.168.20.172"
+
+alias vup="cd ~/werk/flighthub/vagrant && vagrant up"
