@@ -99,3 +99,4 @@ _fzf_compgen_dir() {
 }
 
 ssh-add -k
+clear
