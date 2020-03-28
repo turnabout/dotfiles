@@ -21,11 +21,6 @@ function mkcd() {
     cd "$1"
 }
 
-# Check if a command exists
-function cmdexists () {
-    type "$1" &> /dev/null ;
-}
-
 # Mount USB device
 function mountusb() {
     sudo mount /dev/$1 /media/usb
