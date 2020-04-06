@@ -60,6 +60,8 @@ alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
 alias s="cd ~/werk/flighthub/travel/solar"
 alias f="cd ~/werk/flighthub/travel/genesis-frontend"
+
+alias re="cd ~/werk/react-playground"
 alias p="cd ~/werk/poke"
 
 alias va="cd ~/werk/flighthub/vagrant"
