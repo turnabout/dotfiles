@@ -29,7 +29,7 @@ alias gb="git branch"
 # Git push current branch
 function gp() {
     branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
-    git push origin "${branch_name}"
+    git push -u origin "${branch_name}"
 }
 
 # Git add all & push
