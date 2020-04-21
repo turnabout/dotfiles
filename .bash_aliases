@@ -68,4 +68,4 @@ alias va="cd ~/werk/flighthub/vagrant"
 alias vssh="va && vagrant ssh"
 alias vup="va && vagrant up"
 
-alias navicat="~/Downloads/navicat15-mysql-en.AppImage &"
+alias navicat="/usr/local/navicat15-mysql-en.AppImage &"
