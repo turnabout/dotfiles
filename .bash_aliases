@@ -48,6 +48,7 @@ alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of
 # Fix partitions (home)
 alias fixwerk="sudo umount --force  /media/werk && sudo ntfsfix /dev/sdc2 && sudo mount -o rw /media/werk"
 alias fixdata="sudo umount --force  /media/data && sudo ntfsfix /dev/sda1 && sudo mount -o rw /media/data"
+alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 
 
 # +----------------------------------------------------------------------------+
