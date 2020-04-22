@@ -54,7 +54,8 @@ alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias phpstorm="/usr/local/PhpStorm/bin/phpstorm.sh &"
+alias phpstorm="/home/kevin/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/201.7223.29/bin/phpstorm.sh &"
+
 
 alias werk="cd ~/werk/"
 alias r="cd ~/werk/flighthub/travel/ota-react"
