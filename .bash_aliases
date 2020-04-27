@@ -55,8 +55,7 @@ alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias phpstorm="/home/kevin/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/201.7223.29/bin/phpstorm.sh &"
-
+alias phpstorm="/opt/PhpStorm/bin/phpstorm.sh &"
 
 alias werk="cd ~/werk/"
 alias r="cd ~/werk/flighthub/travel/ota-react"
@@ -71,4 +70,4 @@ alias va="cd ~/werk/flighthub/vagrant"
 alias vssh="va && vagrant ssh"
 alias vup="va && vagrant up"
 
-alias navicat="/usr/local/navicat15-mysql-en.AppImage &"
+alias navicat="/opt/navicat15-mysql-en.AppImage &"
