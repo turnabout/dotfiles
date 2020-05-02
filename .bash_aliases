@@ -45,18 +45,12 @@ alias killvlc="kill -9 `pgrep vlc`"
 alias sicp="cd /media/data/sicp"
 alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of DVI-D-0"
 alias pserver="python3 -m http.server 8000"
-
-# Fix partitions (home)
-alias fixwerk="sudo umount --force  /media/werk && sudo ntfsfix /dev/sdc2 && sudo mount -o rw /media/werk"
-alias fixdata="sudo umount --force  /media/data && sudo ntfsfix /dev/sda1 && sudo mount -o rw /media/data"
 alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
-
 
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias phpstorm="/opt/PhpStorm/bin/phpstorm.sh &"
-
+alias goland="/snap/goland/current/bin/goland.sh &"
 alias werk="cd ~/werk/"
 alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
