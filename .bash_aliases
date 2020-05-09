@@ -47,6 +47,10 @@ alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of
 alias pserver="python3 -m http.server 8000"
 alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 
+# Mute/unmute
+alias mu="pactl set-sink-mute 0 1"
+alias um="pactl set-sink-mute 0 0"
+
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
