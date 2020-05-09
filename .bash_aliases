@@ -50,7 +50,6 @@ alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias goland="/snap/goland/current/bin/goland.sh &"
 alias werk="cd ~/werk/"
 alias r="cd ~/werk/flighthub/travel/ota-react"
 alias d="cd ~/werk/flighthub/travel/docroots"
