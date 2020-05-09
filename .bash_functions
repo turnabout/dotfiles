@@ -44,6 +44,17 @@ function tl() {
     fi
 }
 
+# Toggle between muted/unmuted audio
+function tm() {
+    muted=`pacmd list-sinks | awk '/muted/ { print $2 }'`
+
+    if [ $muted == "no" ]; then
+        pactl set-sink-mute 0 1
+    else
+        pactl set-sink-mute 0 0
+    fi
+}
+
 # +----------------------------------------------------------------------------+
 # | IDE-like utilities                                                         |
 # +----------------------------------------------------------------------------+
