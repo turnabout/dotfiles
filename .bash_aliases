@@ -62,5 +62,3 @@ alias p="cd ~/werk/poke"
 alias va="cd ~/werk/flighthub/vagrant"
 alias vssh="va && vagrant ssh"
 alias vup="va && vagrant up"
-
-alias navicat="/opt/navicat15-mysql-en.AppImage &"
