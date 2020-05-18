@@ -215,3 +215,9 @@ function tsplit() {
         tmux attach -t ${winName}
     fi
 }
+
+# Get usage data for a process
+function psgr() {
+    ps aux | head -n 1
+    ps aux | grep ${1}
+}
