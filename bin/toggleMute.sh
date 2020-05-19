@@ -7,3 +7,4 @@ else
     pactl set-sink-mute 0 0
 fi
 
+/home/kevin/.dotfiles/bin/sendGoBarSignal.sh SIGRTMIN+5
