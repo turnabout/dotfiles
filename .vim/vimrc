@@ -155,8 +155,8 @@ nnoremap <C-b> :BufOnly<CR>
 
 " Tab navigation
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-g>     :tabmove -1<CR>
-nnoremap <C-h>     :tabmove +1<CR>
+nnoremap <C-j>     :tabp<CR>
+nnoremap <C-k>     :tabn<CR>
 
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
