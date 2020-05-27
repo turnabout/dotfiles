@@ -16,3 +16,10 @@ Notes
 --------------------------------------------------------------------------------
 Used to generate the header titles::
     figlet -f standard (title)
+
+To use bash aliases auto-completion:
+1. Make sure `bash-completion` is installed (`apt install bash-completion`)
+2. Add the new alias like normal to .bash_aliases (or .bash_git, or any other file)
+3. Register the new alias at the bottom of .bash_completion like this: `complete -F _complete_alias foo`
+
+More information: https://github.com/cykerway/complete-alias
