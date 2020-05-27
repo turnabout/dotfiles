@@ -27,6 +27,7 @@ files="
 .bash_aliases 
 .bash_functions
 .bash_git
+.bash_completion
 bin
 "
 
