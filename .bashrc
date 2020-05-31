@@ -101,12 +101,17 @@ _fzf_compgen_dir() {
 ssh-add -k
 clear
 
-export GOPATH="$HOME/go"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Go
+export GOPATH="$HOME/go"
 export GOBIN="/home/kevin/go/bin"
 export PATH=$PATH:/home/kevin/go/bin
+
+# AWO project
+export AWO_ASSETS_PATH="/home/kevin/werk/awodatagen/assets"
+export AWO_SPRITESHEET="/home/kevin/werk/AWO/AWO/Resources/Textures/spritesheet.png"
+export AWO_JSON="/home/kevin/werk/AWO/AWO/Resources/Data/game_data.json"
