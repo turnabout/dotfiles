@@ -63,3 +63,8 @@ alias p="cd ~/werk/poke"
 alias va="cd ~/werk/flighthub/vagrant"
 alias vssh="va && vagrant ssh"
 alias vup="va && vagrant up"
+
+# AWO shortcuts
+alias aw="cd /home/kevin/werk/AWO && clear"
+alias awd="cd /home/kevin/werk/AWO && clear"
+alias awr="v ${AWO_JSON}"
