@@ -55,6 +55,12 @@ function tm() {
     fi
 }
 
+# Get usage data for a process
+function psgr() {
+    ps aux | head -n 1
+    ps aux | grep ${1}
+}
+
 # +----------------------------------------------------------------------------+
 # | IDE-like utilities                                                         |
 # +----------------------------------------------------------------------------+
@@ -214,10 +220,4 @@ function tsplit() {
     else
         tmux attach -t ${winName}
     fi
-}
-
-# Get usage data for a process
-function psgr() {
-    ps aux | head -n 1
-    ps aux | grep ${1}
 }
