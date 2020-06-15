@@ -71,4 +71,5 @@ alias awa="pcmanfm-qt /home/kevin/werk/awodatagen/assets &"
 alias awr="v ${AWO_JSON}"
 
 # Localbooru shortcuts
+alias slb="docker start localbooru"
 alias lb="docker exec -it localbooru /bin/bash"
