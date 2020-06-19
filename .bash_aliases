@@ -59,6 +59,7 @@ alias f="cd ~/werk/flighthub/travel/genesis-frontend"
 
 alias re="cd ~/werk/react-playground"
 alias p="cd ~/werk/poke"
+alias ref="git checkout develop && gpr && nukeshit"
 
 alias va="cd ~/werk/flighthub/vagrant"
 alias vssh="va && vagrant ssh"
