@@ -167,6 +167,19 @@ function sxhkdre() {
     echo "sxhkd Config Reloaded"
 }
 
+# Daily setup
+function ds() {
+    sudo touch .
+    phpstorm &
+    google-chrome &
+    chromium &
+    vup
+    sleep 10
+    i3-msg '[class="Chromium"] move to workspace "4"'
+    i3-msg '[class="jetbrains-phpstorm"] move to workspace "1"'
+    exit
+}
+
 # +----------------------------------------------------------------------------+
 # | Internal functions                                                         |
 # +----------------------------------------------------------------------------+
