@@ -150,11 +150,6 @@ function tms() {
 # | Other Install-specific helpers                                             |
 # +----------------------------------------------------------------------------+
 
-# Reload .bashsrc
-function reloadb() {
-    source ~/.bashrc
-}
-
 # Un-fuck sda1 partition
 function unfucksda1() {
     sudo ntfsfix /dev/sda1
