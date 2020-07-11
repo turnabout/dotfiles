@@ -13,7 +13,8 @@ alias fucking="sudo"
 alias fuck='sudo $(history -p \!\!)'
 alias sudo="sudo "
 alias cls="clear"
-alias cd..='cd ..'
+alias cd..="cd .."
+alias cd...="cd ../.."
 alias la="ls -oa"
 
 # Enable color support of ls and also add handy aliases
