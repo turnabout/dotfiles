@@ -144,11 +144,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Buffer navigation
 nnoremap J     :bp<CR>
 nnoremap K     :bn<CR>
-nnoremap <C-w> :BD<CR>
 nnoremap g$    :blast<CR>
 nnoremap g0    :bfirst<CR>
-
-inoremap <C-w> <Esc>:BD<CR>
 
 nnoremap gb :buffers<CR>:buffer<Space>
 nnoremap <C-b> :BufOnly<CR>
@@ -180,9 +177,6 @@ map <leader>V :winc V<CR>
 noremap <silent> <C-S>  :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
-
-" Remap CTRL-W to CTRL-E for pane navigation as my terminal doesn't allow
-nnoremap <C-e> <C-w>
 
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
