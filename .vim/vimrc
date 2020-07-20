@@ -181,6 +181,9 @@ noremap <silent> <C-S>  :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
+" Remap CTRL-W to CTRL-E for pane navigation as my terminal doesn't allow
+nnoremap <C-e> <C-w>
+
 " +----------------------------------------------------------------------------+
 " | Settings                                                                   |
 " +----------------------------------------------------------------------------+
