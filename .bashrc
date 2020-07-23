@@ -62,6 +62,11 @@ if [ -f ~/.bash_git ]; then
     . ~/.bash_git
 fi
 
+# Additional definitions (gitignored, machine-specific)
+if [ -f ~/.bash_additional ]; then
+    . ~/.bash_additional
+fi
+
 # Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
