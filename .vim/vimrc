@@ -223,24 +223,6 @@ set statusline+=%c        " Column number
 
 
 " +----------------------------------------------------------------------------+
-" | C programming                                                              |
-" +----------------------------------------------------------------------------+
-" Save and compile current file
-function C_compile_file()
-    w
-    !gcc -g %
-endfunction
-
-map <leader>gc :call C_compile_file()
-
-" Single line C comment
-imap <C-_> /**/jkhi<space><space>jki
-
-" Multi line C comment
-imap <C-n> /*<Enter><Enter><Backspace>/jkkA<space>
-
-
-" +----------------------------------------------------------------------------+
 " | From defaults                                                              |
 " +----------------------------------------------------------------------------+
 " Only when compiled with support for autocommands.
