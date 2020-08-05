@@ -44,3 +44,7 @@ done
 # Create directories for neovim init file & symlink
 mkdir -p ~/.config/nvim
 ln -s $dir/.vim/nvimrc ~/.config/nvim/init.vim
+
+# TODO: symlink files from additional directories
+# symlink ~/.dotfiles/.i3.gostatus.yml to ~/.config/i3/gostatus.yml
+# symlink ~/.dotfiles/.i3.config to ~/.config/i3/config

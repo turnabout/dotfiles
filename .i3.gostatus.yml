@@ -1,0 +1,11 @@
+---
+addons:
+    - name: "weather"
+      location: "terrebonne,quebec"
+    - name: "volume"
+    - name: "cpu"
+    - name: "memory"
+    - name: "disk"
+      path: "/"
+    - name: "time"
+    - name: "date"
