@@ -20,6 +20,7 @@ alias gru="git remote update"
 alias repofiles="git ls-files-root --cached --others --exclude-standard"
 alias nukeshit="git branch --merged| egrep -v \"(^\*|master|develop)\" | xargs git branch -d"
 alias gb="git branch"
+alias ref="git checkout develop && gpr && nukeshit"
 
 
 # +----------------------------------------------------------------------------+
