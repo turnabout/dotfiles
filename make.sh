@@ -46,5 +46,5 @@ mkdir -p ~/.config/nvim
 ln -s $dir/.vim/nvimrc ~/.config/nvim/init.vim
 
 # Symlink files from additional directories
-ln -s ~/.dotfiles/.i3.config ~/.config/i3/config
-ln -s ~/.dotfiles/.i3.gostatus.yml ~/.config/i3/gostatus.yml
+ln -s $dir/.i3.config ~/.config/i3/config
+ln -s $dir/.i3.gostatus.yml ~/.config/i3/gostatus.yml
