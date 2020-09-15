@@ -1,5 +1,6 @@
 ---
 addons:
+    - name: "kblayout"
     - name: "weather"
       location: "terrebonne,quebec"
     - name: "volume"
