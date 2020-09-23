@@ -49,9 +49,10 @@ function gl() {
 
 # Generate lists of commit messages with certain substring + their authors
 function commitgrep() {
-    git log --grep="${1}" --pretty="format:%B" | sed '/^[[:space:]]*$/d' | grep ${1} > ${1}-commits.txt
+    git log --grep="${1}" --pretty="format:%B" | sed '/^[[:space:]]*$/d' | grep ${1} > ${1}-commits
     git log --grep="${1}" --pretty="format:%an" > ${1}-authors
     cat ${1}-authors | grep -v "^\s*$" | sort | uniq -c | sort -bnr > ${1}-leaderboard
+    cat ${1}-commits | wc -l
 }
 
 
