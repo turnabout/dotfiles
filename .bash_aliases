@@ -56,20 +56,6 @@ alias goi="go install"
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
-alias werk="cd ~/werk/"
-alias r="cd ~/werk/flighthub/travel/ota-react"
-alias d="cd ~/werk/flighthub/travel/docroots"
-alias s="cd ~/werk/flighthub/travel/solar"
-alias f="cd ~/werk/flighthub/travel/genesis-frontend"
-
-alias re="cd ~/werk/react-playground"
-alias p="cd ~/werk/poke"
-
-alias va="cd ~/werk/flighthub/vagrant"
-alias vssh="va && vagrant ssh"
-alias vup="va && vagrant up"
-alias vrp="cd ~/werk/flighthub/vagrant && vagrant reload --provision"
-
 # AWO shortcuts
 alias aw="cd /home/kevin/werk/AWO && clear"
 alias awd="cd /home/kevin/werk/awodatagen && clear"
