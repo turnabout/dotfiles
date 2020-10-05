@@ -56,6 +56,8 @@ alias goi="go install"
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
+alias werk="cd ~/werk"
+
 # AWO shortcuts
 alias aw="cd /home/kevin/werk/AWO && clear"
 alias awd="cd /home/kevin/werk/awodatagen && clear"
