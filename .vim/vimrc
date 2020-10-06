@@ -201,7 +201,7 @@ set rtp+=~/.fzf            " Use fzf
 set hidden                 " Enable to move between buffers without saving
 
 set backspace=indent,eol,start " Allow backspace over all in insert mode
-
+au BufRead,BufNewFile *.rst setlocal textwidth=80 " Wrap rst files at 80 chars
 
 " +----------------------------------------------------------------------------+
 " | Colors and customization                                                   |
