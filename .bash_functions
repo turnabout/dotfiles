@@ -135,14 +135,19 @@ function syncdot() {
     cd ${cwd}
 }
 
-# Open vimrc in vim
+# Open vimrc
 function vrc() {
     ${EDITOR} ~/.dotfiles/.vim/vimrc
 }
 
-# Open bashrc in vim
+# Open bashrc
 function brc() {
     ${EDITOR} ~/.dotfiles/.bashrc 
+}
+
+# Open additional bash commands
+function ba() {
+    ${EDITOR} ~/.bash_additional
 }
 
 # Open all bash dotfiles in new tmux session
