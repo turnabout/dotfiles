@@ -11,6 +11,7 @@
 	name = Kevin Pageau
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore
 [credential]
 	helper = cache --timeout=86400
 [alias]
