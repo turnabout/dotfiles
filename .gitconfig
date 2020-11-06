@@ -18,3 +18,7 @@
     ls-files-root = ! git ls-files
 [push]
 	default = current
+
+# Include machine-specific gitconfig
+[include]
+    path = ~/.gitconfig.additional
