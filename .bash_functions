@@ -265,15 +265,13 @@ function sxhkdre() {
 
 # Daily setup
 function ds() {
-    sudo touch .
     phpstorm &
     google-chrome &
     chromium &
-    vup
     sleep 10
     i3-msg '[class="Chromium"] move to workspace "4"'
     i3-msg '[class="jetbrains-phpstorm"] move to workspace "1"'
-    urxvt -e sh -c "cd ~/werk/flighthub/travel/solar/;bash" &
+    urxvt -e sh -c "cd ~/werk/ubisoft/src/;bash" &
     exit
 }
 
