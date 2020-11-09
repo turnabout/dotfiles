@@ -268,7 +268,7 @@ function ds() {
     phpstorm &
     google-chrome &
     chromium &
-    sleep 10
+    sleep 60
     i3-msg '[class="Chromium"] move to workspace "4"'
     i3-msg '[class="jetbrains-phpstorm"] move to workspace "1"'
     urxvt -e sh -c "cd ~/werk/ubisoft/src/;bash" &
