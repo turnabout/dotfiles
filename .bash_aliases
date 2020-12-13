@@ -57,6 +57,7 @@ alias goi="go install"
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
 alias werk="cd ~/werk"
+alias iq="cd ~/werk/datainterviewqs/interviewqs"
 
 # AWO shortcuts
 alias aw="cd /home/kevin/werk/AWO && clear"
