@@ -20,7 +20,6 @@ alias gru="git remote update"
 alias repofiles="git ls-files-root --cached --others --exclude-standard"
 alias nukeshit="git branch --merged| egrep -v \"(^\*|master|develop)\" | xargs git branch -d"
 alias gb="git branch"
-alias ref="git checkout develop && gpr && nukeshit"
 
 
 # +----------------------------------------------------------------------------+
@@ -53,6 +52,12 @@ function cmgrep() {
     git log --grep="${1}" --pretty="format:%an" > ${1}-authors
     cat ${1}-authors | grep -v "^\s*$" | sort | uniq -c | sort -bnr > ${1}-leaderboard
     cat ${1}-commits | wc -l
+}
+
+# Refresh the default branch
+function ref() {
+    branch_name=$(git remote show origin  | grep "HEAD branch" | cut -d ":" -f 2)
+    git checkout $branch_name && gpr && nukeshit
 }
 
 
