@@ -21,16 +21,6 @@ function mkcd() {
     cd "$1"
 }
 
-# Mount USB device
-function mountusb() {
-    sudo mount /dev/$1 /media/usb
-}
-
-# Unmount USB device
-function umountusb() {
-    sudo umount /media/usb
-}
-
 # Toggle between us/ca keyboard layouts
 function tl() {
     layout=`setxkbmap -query | grep layout | tail -c 3`
