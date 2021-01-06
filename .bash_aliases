@@ -58,14 +58,3 @@ alias goi="go install"
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
 alias werk="cd ~/werk"
-alias iq="cd ~/werk/datainterviewqs/interviewqs && clear"
-
-# AWO shortcuts
-alias aw="cd /home/kevin/werk/AWO && clear"
-alias awd="cd /home/kevin/werk/awodatagen && clear"
-alias awa="pcmanfm-qt /home/kevin/werk/awodatagen/assets &"
-alias awr="v ${AWO_JSON}"
-
-# Localbooru shortcuts
-alias slb="docker start localbooru"
-alias lb="docker exec -it localbooru /bin/bash"
