@@ -46,9 +46,7 @@ alias getclip="xclip -selection c -o";
 
 alias python=python3.5
 alias v="nvim"
-alias def="/usr/bin/sdcv"
 alias killvlc="kill -9 `pgrep vlc`"
-alias sicp="cd /media/data/sicp"
 alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of DVI-D-0"
 alias pserver="python3 -m http.server 8000"
 alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
