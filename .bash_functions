@@ -45,6 +45,11 @@ function tm() {
     fi
 }
 
+# Move file to previously-visited directory
+function mvl() {
+    mv "$1" "$OLDPWD"
+}
+
 # Get usage data for a process
 function psgr() {
     ps aux | head -n 1
