@@ -126,6 +126,7 @@ PATH=/c/Windows/Microsoft.NET/Framework64/v4.0.30319:$PATH
 # Compiling go archive for C
 PATH=/c/TDM-GCC-32/bin:$PATH
 PATH=$GOPATH/bin/windows_386:$PATH
+PATH=/f/win_programs/nvm/nvm.exe:$PATH
 
 # AWO
 # Make output path
