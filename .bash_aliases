@@ -34,6 +34,7 @@ alias dfi="dotfiles"
 alias reloadb="source ~/.bashrc"
 alias up="cd ../"
 alias lm="lastmod"
+alias pwdc="pwd | setclip"
 
 # +----------------------------------------------------------------------------+
 # | Program shortcuts                                                          |
