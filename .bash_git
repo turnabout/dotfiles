@@ -48,6 +48,12 @@ function gl() {
     fi
 }
 
+# Amend previous commit with all current changes
+function gaml() {
+    git add .
+    git commit --amend --no-edit
+}
+
 # Generate lists of commit messages with certain substring + their authors
 function cmgrep() {
     git log --grep="${1}" --pretty="format:%an:%B" | sed '/^[[:space:]]*$/d' | grep ${1} > ${1}-commits
