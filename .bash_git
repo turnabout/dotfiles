@@ -48,10 +48,15 @@ function gl() {
     fi
 }
 
-# Amend previous commit with all current changes
+# Amend previous commit with all current changes - "Git AMend Last"
 function gaml() {
     git add .
     git commit --amend --no-edit
+}
+
+# View changes introduced by a single commit - "Git CHanges"
+function gch() {
+    git diff ${1}~ ${1}
 }
 
 # Generate lists of commit messages with certain substring + their authors
