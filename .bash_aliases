@@ -32,6 +32,7 @@ alias getip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0
 
 alias dfi="dotfiles"
 alias reloadb="source ~/.bashrc"
+alias rb="reloadb"
 alias up="cd ../"
 alias lm="lastmod"
 alias pwdc="pwd | setclip"
