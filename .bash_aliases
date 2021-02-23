@@ -54,6 +54,10 @@ alias pserver="python3 -m http.server 8000"
 alias mp3dl="youtube-dl --extract-audio --audio-format mp3 "
 alias goi="go install"
 
+# Simple HTTP server (localhost:1234)
+alias sse="python3.9 -m http.server 1234 --bind 127.0.0.1"
+alias ssv="sse"
+
 # +----------------------------------------------------------------------------+
 # | Werk related                                                               |
 # +----------------------------------------------------------------------------+
