@@ -242,6 +242,17 @@ function tms() {
     clear
 }
 
+# "Working Directory Clipboard" - set pwd to clipboard
+function wdc() {
+    pwd | setclip
+}
+
+# "Go to Clipboard" - cd to clipboard contents
+function goc() {
+    V="$(getclip)"
+    cd "$V"
+}
+
 # +----------------------------------------------------------------------------+
 # | Other Install-specific helpers                                             |
 # +----------------------------------------------------------------------------+
