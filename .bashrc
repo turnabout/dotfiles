@@ -80,6 +80,7 @@ fi
 
 # Add to PATH
 export PATH=$PATH:/sbin:$HOME/bin:/usr/local/PhpStorm/bin
+export PATH=$PATH:/home/kevin/.local/bin
 
 # Host name & port
 export HOST="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
