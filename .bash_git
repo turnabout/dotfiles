@@ -24,6 +24,7 @@ alias gcm="git commit"
 alias gsp="git stash pop"
 alias gst="git stash"
 alias grv="git remote -v"
+alias grc="git rebase --continue"
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
