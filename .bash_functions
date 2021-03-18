@@ -275,7 +275,7 @@ function ds() {
     google-chrome &
     chromium &
     sleep 300
-    i3-msg '[class="Chromium"] move to workspace "4"'
+    i3-msg '[class="google-chrome"] move to workspace "4"'
     i3-msg '[class="jetbrains-phpstorm"] move to workspace "1"'
     urxvt -e sh -c "cd ~/werk/ubisoft/src/;bash" &
     exit
