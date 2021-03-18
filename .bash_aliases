@@ -64,5 +64,5 @@ alias t="task"
 # | Path shortcuts                                                             |
 # +----------------------------------------------------------------------------+
 alias werk="cd ~/werk"
-alias sbin="cd ~/.local/sbin && clear"
+alias lbin="cd ~/.local/bin && clear"
 
