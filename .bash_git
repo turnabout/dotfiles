@@ -28,6 +28,7 @@ alias grc="git rebase --continue"
 alias ga.="git add ."
 alias gad="git add"
 alias gcml="git commit --amend --no-edit"
+alias gcp="git cherry-pick"
 
 
 # +----------------------------------------------------------------------------+
