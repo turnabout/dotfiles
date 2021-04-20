@@ -115,11 +115,8 @@ map Q gq
 noremap <C-m> A;<Esc>
 
 " Move current line up/down
-" nnoremap <C-j> :m .+1<CR>==
-" nnoremap <C-k> :m .-2<CR>==
-
-" Join lines
-nnoremap <C-j> :join<CR>
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
 
 " +----------------------------------------------+
 " |  Insert                                      |
@@ -152,8 +149,6 @@ nnoremap <C-b> :BufOnly<CR>
 
 " Tab navigation
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-j>     :tabp<CR>
-nnoremap <C-k>     :tabn<CR>
 
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-g>     <Esc>:tabmove -1<CR>
