@@ -14,6 +14,7 @@ alias fuck='sudo $(history -p \!\!)'
 alias sudo="sudo "
 alias cls="clear"
 alias cd..="cd .."
+alias cd-="cd - && clear"
 alias cd...="cd ../.."
 alias cd....="cd ../../.."
 alias la="ls -oa"
