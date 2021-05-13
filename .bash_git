@@ -61,6 +61,11 @@ function gaml() {
     git commit --amend --no-edit
 }
 
+# Same as "gaml" but without "git add ."
+function gcml() {
+    git commit --amend --no-edit
+}
+
 # View changes introduced by a single commit - "Git CHanges"
 function gch() {
     git diff ${1}~ ${1}
