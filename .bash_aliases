@@ -45,6 +45,7 @@ alias pwdc="pwd | setclip"
 # Xclip copy/paste
 # usage: echo foo | setclip ...... echo `getclip`
 alias setclip="xclip -selection c"
+alias sc="setclip"
 alias getclip="xclip -selection c -o";
 
 alias python=python3.5
