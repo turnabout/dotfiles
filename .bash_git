@@ -11,6 +11,7 @@
 # +----------------------------------------------------------------------------+
 alias gs="git status"
 alias gc="git checkout"
+alias gc-="git checkout - && clear"
 alias gcn="git checkout -b "
 alias ga="git add -A && git commit"
 alias gd="git diff"
