@@ -57,6 +57,15 @@ function gl() {
     fi
 }
 
+# Git interactive rebase shortcut
+function gri() {
+    if [ ${1} ]; then 
+        git rebase -i HEAD~${1}
+    else
+        git rebase -i HEAD~10
+    fi
+}
+
 # Amend previous commit with all current changes - "Git AMend Last"
 function gaml() {
     git add .
