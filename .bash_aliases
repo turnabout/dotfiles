@@ -60,6 +60,7 @@ alias goi="go install"
 alias sse="python3.9 -m http.server 1234 --bind 127.0.0.1"
 alias ssv="sse"
 
+alias bat="batcat"
 alias t="task"
 
 # +----------------------------------------------------------------------------+
