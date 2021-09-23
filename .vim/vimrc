@@ -275,4 +275,8 @@ endif
 autocmd BufRead,BufNewFile .bash_* set filetype=sh
 
 " Prettify JSON
-nmap =j :%!jq --indent 4 .
+nmap =jp :%!jq --indent 4 .
+
+" Compact JSON
+nmap =jc :%!jq -c .
+
