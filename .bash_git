@@ -73,6 +73,12 @@ function gaml() {
     git commit --amend --no-edit
 }
 
+# gaml + gpf
+function gamlf() {
+    gaml
+    gpf
+}
+
 # Same as "gaml" but without "git add ."
 function gcml() {
     git commit --amend --no-edit
