@@ -47,6 +47,7 @@ alias pwdc="pwd | setclip"
 alias setclip="xclip -selection c"
 alias sc="setclip"
 alias getclip="xclip -selection c -o";
+alias pwdsc="pwd | sc"
 
 alias python=python3.5
 alias v="nvim"
