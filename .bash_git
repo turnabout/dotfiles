@@ -32,7 +32,7 @@ alias gcml="git commit --amend --no-edit"
 alias gcp="git cherry-pick"
 alias gpf="git push -f"
 alias grir="git rebase -i --root $(git rev-parse --abbrev-ref HEAD)"
-
+alias grs="git reset --soft HEAD~1"
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
