@@ -103,6 +103,11 @@ function ref() {
     git checkout $branch_name && gpr && nukeshit
 }
 
+# View files affected by a single commit - "Git Files"
+function gfi() {
+    git diff-tree --no-commit-id --name-only -r ${1}
+}
+
 
 # +----------------------------------------------------------------------------+
 # | Git branch in prompt                                                       |
