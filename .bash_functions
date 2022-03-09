@@ -10,6 +10,11 @@
 # | General helper functions                                                   |
 # +----------------------------------------------------------------------------+
 
+# Tail file with JSON
+function tailjson() {
+    tail -f "${1}" | jq --indent 4
+}
+
 # Get file last modified date
 function lastmod() {
     stat -c %y "${1}"
