@@ -18,6 +18,7 @@ alias cd-="cd - && clear"
 alias cd...="cd ../.."
 alias cd....="cd ../../.."
 alias la="ls -oa"
+alias lo="ls -o"
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
