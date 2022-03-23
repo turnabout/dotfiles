@@ -477,4 +477,5 @@ _complete_alias() {
 ##  ============================================================================
 
 complete -F _complete_alias gc
+complete -F _complete_alias gbd
 #complete -F _complete_alias myalias2
