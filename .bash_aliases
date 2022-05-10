@@ -70,4 +70,5 @@ alias t="task"
 # +----------------------------------------------------------------------------+
 alias werk="cd ~/werk"
 alias lbin="cd ~/.local/bin && clear"
+alias bad="v ~/.bash_additional"
 
