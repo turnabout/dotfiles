@@ -28,6 +28,7 @@ files="
 .bash_functions
 .bash_git
 .bash_completion
+.ideavimrc
 bin
 "
 
