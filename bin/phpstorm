@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+/snap/phpstorm/current/bin/phpstorm.sh
+
