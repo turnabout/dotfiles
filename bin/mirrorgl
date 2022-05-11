@@ -1,0 +1,86 @@
+#!/usr/bin/bash
+
+# Uses GITLAB_BASE env variable
+
+printHelp() {
+    echo "Mirrors a GitLab group locally by cloning all of its projects recursively."
+    echo "NOTE: Will only do up to 100 projects. Ignores archived projects."
+    echo ""
+    echo "Usage:"
+    echo ""
+    echo "export GITLAB_BASE=https://gitlab-instance.base.org"
+    echo "export GITLAB_TOKEN=private_token"
+    echo "mirrorgl <GROUP_ID> <stripped_local_prefix>"
+    echo ""
+    echo "'stripped_local_prefix' is optional and will strip the given prefix from the local destination path(s)"
+    echo "example: if stripped_local_prefix is 'ecom/jupiter/' and a project's path is 'ecom/jupiter/symfony/lambda-bundle'"
+    echo "         the local destination path will be '$(pwd)/symfony/lambda-bundle'"
+    echo ""
+    echo "Usage example:"
+    echo ""
+    echo "$ cd /home/kevin/ubisoft/src/testoutput"
+    echo "$ mirrorgl 19555 ecom/internal-integrations/"
+    echo "Cloning 'grafana-boards' into '/home/kevin/ubisoft/src/testoutput/grafana-boards'"
+    echo "Cloning 'mm-pocs/typescriptimplementation' into '/home/kevin/ubisoft/src/test/mm-pocs/typescriptimplementation'"
+    echo "..."
+    echo ""
+    echo "$1"
+}
+
+# Check token
+if [[ -z "$GITLAB_TOKEN" ]]; then
+    printHelp "ERROR: Must set 'GITLAB_TOKEN' environment variable"
+    exit
+fi
+
+# Check base
+if [[ -z "$GITLAB_BASE" ]]; then
+    printHelp "ERROR: Must set 'GITLAB_BASE' environment variable"
+    exit
+fi
+
+# Check GitLab private token & group ID variables are set
+if [[ -z "$1" ]]; then
+    printHelp "ERROR: Must set at least the first argument (group id)"
+    exit
+fi
+
+# Set optional prefix
+prefix=""
+if [ -n "$2" ]
+then
+    prefix=$2
+fi
+
+repoList=$(curl --silent --header "PRIVATE-TOKEN: $GITLAB_TOKEN" "${GITLAB_BASE}/api/v4/groups/${1}/projects?include_subgroups=true&per_page=100&archived=false" | jq --compact-output --raw-output ".[]")
+
+# Make newslines the only separator
+IFS=$'\n'
+
+# Loop every repo JSON
+for repo in $repoList; do
+
+    _jq() {
+        echo ${repo} | jq --raw-output ${1}
+    }
+
+    repoPath=$(_jq ".path_with_namespace")
+    repoSsh=$(_jq ".ssh_url_to_repo")
+
+    # Trim destination prefix if needed
+    if [ -n "$2" ]
+    then
+        repoPathFinal=${repoPath#"$prefix"}
+    else
+        repoPathFinal=${repoPath}
+    fi
+
+    mkdir --parents $repoPathFinal
+    cd $repoPathFinal
+
+    # Clone
+    echo "Cloning '${repoPathFinal}' into '$(pwd)'"
+    git clone --quiet $repoSsh .
+    cd - > /dev/null
+done
+
