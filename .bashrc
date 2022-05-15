@@ -121,3 +121,4 @@ export PATH=$PATH:/home/kevin/go/bin:/usr/local/go/bin
 export AWO_ASSETS_PATH="/home/kevin/werk/awodatagen/assets"
 export AWO_SPRITESHEET="/home/kevin/werk/AWO/AWO/Resources/Textures/spritesheet.png"
 export AWO_JSON="/home/kevin/werk/AWO/AWO/Resources/Data/game_data.json"
+
