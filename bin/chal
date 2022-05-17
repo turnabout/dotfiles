@@ -5,7 +5,7 @@
 # Non-work profile
 i3-msg 'workspace 4; exec google-chrome-stable --profile-directory="Profile 1"' &
 
-sleep 0.5
+sleep 1
 
 # Work profile
 i3-msg 'workspace 2; exec google-chrome-stable --profile-directory="Profile 2"' &
