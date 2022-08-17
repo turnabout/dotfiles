@@ -114,8 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Go
 export GOPATH="$HOME/go"
-export GOBIN="/home/kevin/go/bin"
-export PATH=$PATH:/home/kevin/go/bin:/usr/local/go/bin
+export GOBIN="$HOME/go/bin"
+export PATH=$PATH:$GOBIN:/usr/local/go/bin
 
 # AWO project
 export AWO_ASSETS_PATH="/home/kevin/werk/awodatagen/assets"
