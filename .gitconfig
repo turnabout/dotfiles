@@ -13,7 +13,7 @@
 	editor = nvim
 	excludesfile = ~/.gitignore
 [credential]
-	helper = cache --timeout=86400
+	helper = store --file /home/kevin/.git-credentials
 [alias]
     ls-files-root = ! git ls-files
 [push]
@@ -31,3 +31,6 @@
 
 [url "git@gitlab-ncsa.ubisoft.org:"]
 	insteadof = https://gitlab-ncsa.ubisoft.org/
+
+[init]
+	defaultBranch = main
