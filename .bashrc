@@ -82,10 +82,6 @@ fi
 export PATH=$PATH:/sbin:$HOME/bin:/usr/local/PhpStorm/bin
 export PATH=$PATH:/home/kevin/.local/bin
 
-# Host name & port
-export HOST="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
-export PORT="8080"
-
 # Use fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPS="--extended"
@@ -111,6 +107,9 @@ clear
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# PATH tweaks
+export PATH="$PATH:$HOME/bin-additional"
 
 # Go
 export GOPATH="$HOME/go"
