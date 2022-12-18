@@ -6,7 +6,7 @@
 #                                 
 
 # Bash function for adding a system path, but only if not already there
-pathadd() {
+addpath() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
     fi
@@ -114,12 +114,12 @@ export NVM_DIR="$HOME/.nvm"
 # | $PATH tweaks
 # +----------------------------------------------------------------------------+
 
-pathadd "${HOME}/.local/bin"
-pathadd "${HOME}/bin-additional"
+addpath "${HOME}/.local/bin"
+addpath "${HOME}/bin_additional"
 
 # Go
-pathadd "${HOME}/go"
-pathadd "${HOME}/go/bin"
-pathadd "${GOBIN}"
-pathadd "/usr/local/go/bin"
+addpath "${HOME}/go"
+addpath "${HOME}/go/bin"
+addpath "${GOBIN}"
+addpath "/usr/local/go/bin"
 

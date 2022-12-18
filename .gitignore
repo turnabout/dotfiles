@@ -1,3 +1,5 @@
 *.netrwhist
 *.swp
 .bash_additional
+bin_additional
+
