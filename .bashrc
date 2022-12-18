@@ -5,6 +5,12 @@
 #  |_.__/ \__,_|___/_| |_|_|  \___|
 #                                 
 
+# Bash function for adding a system path, but only if not already there
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
 
 # If not running interactively, don't do anything
 case $- in
@@ -78,10 +84,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# Add to PATH
-export PATH=$PATH:/sbin:$HOME/bin:/usr/local/PhpStorm/bin
-export PATH=$PATH:/home/kevin/.local/bin
-
 # Use fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPS="--extended"
@@ -103,21 +105,21 @@ _fzf_compgen_dir() {
 ssh-add -k
 clear
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# PATH tweaks
-export PATH="$PATH:$HOME/bin-additional"
+
+# +----------------------------------------------------------------------------+
+# | $PATH tweaks
+# +----------------------------------------------------------------------------+
+
+pathadd "${HOME}/.local/bin"
+pathadd "${HOME}/bin-additional"
 
 # Go
-export GOPATH="$HOME/go"
-export GOBIN="$HOME/go/bin"
-export PATH=$PATH:$GOBIN:/usr/local/go/bin
-
-# AWO project
-export AWO_ASSETS_PATH="/home/kevin/werk/awodatagen/assets"
-export AWO_SPRITESHEET="/home/kevin/werk/AWO/AWO/Resources/Textures/spritesheet.png"
-export AWO_JSON="/home/kevin/werk/AWO/AWO/Resources/Data/game_data.json"
+pathadd "${HOME}/go"
+pathadd "${HOME}/go/bin"
+pathadd "${GOBIN}"
+pathadd "/usr/local/go/bin"
 

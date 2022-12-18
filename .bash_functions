@@ -26,6 +26,11 @@ function mkcd() {
     cd "$1"
 }
 
+# Echo system paths in a readable format
+function epath {
+    sed 's/:/\n/g' <<< "${PATH}"
+}
+
 # Toggle between us/ca keyboard layouts
 function tl() {
     layout=`setxkbmap -query | grep layout | tail -c 3`
