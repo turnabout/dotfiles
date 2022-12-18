@@ -50,7 +50,6 @@ alias sc="setclip"
 alias getclip="xclip -selection c -o";
 alias pwdsc="pwd | sc"
 
-alias python=python3.5
 alias v="nvim"
 alias killvlc="kill -9 `pgrep vlc`"
 alias tv="xrandr --output HDMI-A-0 --mode 1920x1080 --set underscan on --left-of DVI-D-0"
