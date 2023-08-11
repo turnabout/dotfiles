@@ -36,6 +36,7 @@ alias grir="git rebase -i --root $(git rev-parse --abbrev-ref HEAD)"
 alias grs="git reset --soft HEAD~1"
 alias gbd='git branch -D'
 alias gds='git diff --staged'
+alias filehis='git log --full-history --'
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
