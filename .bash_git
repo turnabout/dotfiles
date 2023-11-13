@@ -32,29 +32,33 @@ alias gad="git add"
 alias gcml="git commit --amend --no-edit"
 alias gcp="git cherry-pick"
 alias gpf="git push -f"
-alias grir="git rebase -i --root $(git rev-parse --abbrev-ref HEAD)"
 alias grs="git reset --soft HEAD~1"
-alias gbd='git branch -D'
-alias gds='git diff --staged'
-alias filehis='git log --full-history --'
+alias gbd="git branch -D"
+alias gds="git diff --staged"
+alias filehis="git log --full-history --"
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
 # +----------------------------------------------------------------------------+
 
+# Interactive Git rebase from root
+function grir {
+    git rebase -i --root $(git rev-parse --abbrev-ref HEAD)
+}
+
 # Git push current branch
-function gp() {
+function gp {
     branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
     git push -u origin "${branch_name}"
 }
 
 # Git add all & push
-function gap() {
+function gap {
     ga && gp
 }
 
 # Git log shortcut
-function gl() {
+function gl {
     if [ ${1} ]; then 
         git log -${1}
     else
@@ -63,7 +67,7 @@ function gl() {
 }
 
 # Git interactive rebase shortcut
-function gri() {
+function gri {
     if [ ${1} ]; then 
         git rebase -i HEAD~${1}
     else
@@ -72,29 +76,29 @@ function gri() {
 }
 
 # Amend previous commit with all current changes - "Git AMend Last"
-function gaml() {
+function gaml {
     git add .
     git commit --amend --no-edit
 }
 
 # gaml + gpf
-function gamlf() {
+function gamlf {
     gaml
     gpf
 }
 
 # Same as "gaml" but without "git add ."
-function gcml() {
+function gcml {
     git commit --amend --no-edit
 }
 
 # View changes introduced by a single commit - "Git CHanges"
-function gch() {
+function gch {
     git diff ${1}~ ${1}
 }
 
 # Generate lists of commit messages with certain substring + their authors
-function cmgrep() {
+function cmgrep {
     git log --grep="${1}" --pretty="format:%an:%B" | sed '/^[[:space:]]*$/d' | grep ${1} > ${1}-commits
     git log --grep="${1}" --pretty="format:%an" > ${1}-authors
     cat ${1}-authors | grep -v "^\s*$" | sort | uniq -c | sort -bnr > ${1}-leaderboard
@@ -102,13 +106,13 @@ function cmgrep() {
 }
 
 # Refresh the default branch
-function ref() {
+function ref {
     branch_name=$(git remote show origin  | grep "HEAD branch" | cut -d ":" -f 2)
     git checkout $branch_name && gpr && nukeshit
 }
 
 # View files affected by a single commit - "Git Files"
-function gfi() {
+function gfi {
     git diff-tree --no-commit-id --name-only -r ${1}
 }
 
