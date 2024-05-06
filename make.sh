@@ -20,7 +20,6 @@ files="
 .bash_logout 
 .bashrc 
 .gitconfig 
-.profile 
 .tmux.conf 
 .vim 
 .sxhkdrc 
