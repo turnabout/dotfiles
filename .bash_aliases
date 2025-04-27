@@ -68,5 +68,5 @@ alias t="task"
 # +----------------------------------------------------------------------------+
 alias werk="cd ~/werk"
 alias lbin="cd ~/.local/bin && clear"
-alias bad="v ~/.bash_additional"
+alias bad="NO_NVIM_TREE=1 nvim ~/.bash_additional"
 

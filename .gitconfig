@@ -10,8 +10,9 @@
 	email = pageau.kevin@gmail.com
 	name = Kevin Pageau
 [core]
-	editor = nvim
+    editor = NO_NVIM_TREE=1 nvim
 	excludesfile = ~/.gitignore
+    pager = delta
 [credential]
 	helper = store --file /home/kevin/.git-credentials
 [alias]
@@ -29,8 +30,25 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 
-[url "git@gitlab-ncsa.ubisoft.org:"]
-	insteadof = https://gitlab-ncsa.ubisoft.org/
-
 [init]
 	defaultBranch = main
+[gpg]
+	program = gpg
+
+# Delta usage START ============================================================
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+    navigate = true # Use n and N to move between diff sections
+    light = false
+
+	# Delta: Activate/deactivate "side-by-side" mode
+	side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+# Delta usage END ==============================================================

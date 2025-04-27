@@ -36,6 +36,7 @@ alias grs="git reset --soft HEAD~1"
 alias gbd="git branch -D"
 alias gds="git diff --staged"
 alias filehis="git log --full-history --"
+alias gap="ga && gp"
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
@@ -50,11 +51,6 @@ function grir {
 function gp {
     branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
     git push -u origin "${branch_name}"
-}
-
-# Git add all & push
-function gap {
-    ga && gp
 }
 
 # Git log shortcut
@@ -125,6 +121,8 @@ function gfi {
 red="\033[0;31m"
 white="\033[0;37m"
 green="\033[0;32m"
+yellow="\033[0;33m"
+purple="\033[0;35m"
 
 # Brackets needed around non-printable characters in PS1
 ps1_red='\['"$red"'\]'
@@ -156,11 +154,19 @@ function parse_git_branch() {
 # Use the parse_git_branch() function for that.                                                           
 function parse_git_branch_color() {
     br=$(parse_git_branch)
-    if [[ $br == "(master)" || $br == "(master*)" || $br == "(master**)" || $br == "(master***)" ]]; then
-        echo -e "${red}"
+    if [[ $br == "(main)" || $br == "(main*)" || $br == "(main**)" || $br == "(main***)" ]]; then
+        echo -e "${yellow}"
     else
         echo -e "${green}"
     fi
 }
 
-export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "
+case "$0" in
+  -bash|*/bash)
+    export PS1="$ps1_red\u:$ps1_white\W\[\$(parse_git_branch_color)\]\$(parse_git_branch) $ps1_red\$$ps1_white "
+    ;;
+  -zsh|*/zsh)
+    ;;
+  *)
+    ;;
+esac
