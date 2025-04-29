@@ -21,7 +21,11 @@
 #
 # Valid values:
 # - work_setup
-# - personal_setup
+# - home_setup
+#
+# Example: switch work monitor to work setup:
+#
+# switch-monitor-inputs.sh work_monitor work_setup
 #
 
 # Input sources
@@ -125,13 +129,7 @@ target_display=$2
 
 # If a target display is provided, switch to it specifically
 if [[ -n "$target_display" ]]; then
-    # if [[ "$target_display" == "personal_setup" ]]; then
-    #     target_input="$input_source_1"
-    # else
-    #     target_input="$input_source_2"
-    # fi
-
-    if [[ "$target_display" == "personal_setup" ]]; then
+    if [[ "$target_display" == "home_setup" ]]; then
         target_input="$input_source_1"
     elif [[ "$target_display" == "work_setup" ]]; then
         target_input="$input_source_2"
