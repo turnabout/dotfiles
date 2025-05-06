@@ -11,7 +11,7 @@
 # Identifier for the monitor to update.
 #
 # Valid values:
-# - work_monitor
+# - left_monitor
 # - middle_monitor
 #
 #
@@ -25,7 +25,7 @@
 #
 # Example: switch work monitor to work setup:
 #
-# switch-monitor-inputs.sh work_monitor work_setup
+# switch-monitor-inputs.sh left_monitor work_setup
 #
 
 # Input sources
@@ -47,11 +47,11 @@ declare -A input_source_names=(
 # Info in the values is split like this:
 # [Serial number] [Input source 1 (for personal)] [Input source 2 (for work)]
 declare -A monitor_info_mapping=(
-    # TODO: fill in
+    # TODO: fill in "right"
     # [right]="C0294V3"
 
     [middle_monitor]="C04C4V3 $input_source_dp_1 $input_source_hdmi_1"
-    [work_monitor]="CP7L834 $input_source_hdmi_1 $input_source_usb_c"
+    [left_monitor]="CP7L834 $input_source_hdmi_1 $input_source_usb_c"
 )
 
 get_current_input() {
