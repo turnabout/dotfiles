@@ -36,7 +36,6 @@ alias grs="git reset --soft HEAD~1"
 alias gbd="git branch -D"
 alias gds="git diff --staged"
 alias filehis="git log --full-history --"
-alias gap="ga && gp"
 
 # +----------------------------------------------------------------------------+
 # | Functions                                                                  |
@@ -51,6 +50,11 @@ function grir {
 function gp {
     branch_name="$(git symbolic-ref HEAD 2>/dev/null --short)"
     git push -u origin "${branch_name}"
+}
+
+# Git add all & push
+function gap {
+    ga && gp
 }
 
 # Git log shortcut
@@ -123,11 +127,15 @@ white="\033[0;37m"
 green="\033[0;32m"
 yellow="\033[0;33m"
 purple="\033[0;35m"
+cyan="\033[0;36m"
+
 
 # Brackets needed around non-printable characters in PS1
 ps1_red='\['"$red"'\]'
 ps1_green='\['"$green"'\]'
 ps1_white='\['"$white"'\]'
+ps1_purple='\['"$purple"'\]'
+ps1_cyan='\['"$cyan"'\]'
 
 # Print the branch name and status to be displayed in the command line prompt
 function parse_git_branch() {
