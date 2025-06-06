@@ -114,6 +114,59 @@ function listening {
     done
 }
 
+# Strip comments from HTML, prettify, copy to clipboard, and print confirmation
+# Usage:
+#   prettyhtml file.html
+#   prettyhtml "<html>"
+#   prettyhtml
+#   prettyhtml -m
+function prettyhtml() {
+  local multiline=0
+  local input
+  local file_arg=""
+
+  # Parse flags
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -m)
+        multiline=1
+        shift
+        ;;
+      *)
+        file_arg="$1"
+        shift
+        ;;
+    esac
+  done
+
+  if [[ -n "$file_arg" && -f "$file_arg" ]]; then
+    input=$(<"$file_arg")
+  elif [[ -n "$file_arg" ]]; then
+    input="$file_arg"
+  else
+    if [[ $multiline -eq 1 ]]; then
+      echo "Paste your multiline HTML and press Ctrl+D when done:"
+      input=$(cat)
+    else
+      echo -n "Paste your one-line HTML and press Enter: "
+      read -r input
+    fi
+  fi
+
+  # Process HTML
+  local output
+  output=$(printf "%s" "$input" | perl -0777 -pe 's/<!--.*?-->//gs' | htmlq --pretty)
+
+  # Copy to clipboard
+  printf "%s" "$output" | xclip -selection clipboard
+
+  # Print confirmation and output
+  echo "Output copied to clipboard."
+  printf "%s\n" "$output"
+}
+
+alias phtml="prettyhtml"
+
 # function Extract for common file formats
 
 SAVEIFS=$IFS
